@@ -15,6 +15,7 @@
   (let [new-hp (min (-> world target :max-hp)
                     (+ (-> world target :hp)
                        ((roll 8 (-> world actor :casting-mod)))))]
+    (log actor " casts cure wound and heals " target " to " new-hp)
     (-> world
         (update-in [actor spell-level] - 1)
         (update-in [target :hp] (constantly new-hp)))))
