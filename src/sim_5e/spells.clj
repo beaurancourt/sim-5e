@@ -39,9 +39,12 @@
   [world actor spell-level targets]
   (reduce (fn [world target]
             (let [dex-save ((roll 20 (-> world target :dex-save)))
-                  damage ((roll (+ 2 (spell-level-to-num spell-level)) 6))]
-              (if (>= dex-save (-> world actor :spell-dc))
-                (update-in world [target :hp] do-damage (int (/ damage 2)))
-                (update-in world [target :hp] do-damage damage))))
+                  saved (>= dex-save (-> world actor :spell-dc))
+                  damage-roll ((roll (+ 2 (spell-level-to-num spell-level)) 6))
+                  damage (if (>= dex-save (-> world actor :spell-dc))
+                           (int (/ damage-roll 2))
+                           damage-roll)]
+              (log actor " casts burning hands on " target " for " damage)
+              (update-in world [target :hp] do-damage damage)))
           (update-in world [actor spell-level] - 1)
           targets))
