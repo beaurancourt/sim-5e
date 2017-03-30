@@ -14,14 +14,15 @@
                         :else 4)
         fire-bolt-mod (if (< level 6) 0 main-stat)
         max-hp (+ 10 (* (- level 1) 7))]
-    {:sorcerer {:damage (roll firebolt-dice 10 fire-bolt-mod)
-                :pc true
-                :ac 15
-                :init ((roll 20 1))
-                :hit (roll 20 (+ main-stat (proficiency level)))
-                :attacks 1
-                :max-hp max-hp
-                :hp max-hp}}))
+    {:sorcerer (merge {:damage (roll firebolt-dice 10 fire-bolt-mod)
+                       :pc true
+                       :ac 15
+                       :init ((roll 20 1))
+                       :hit (roll 20 (+ main-stat (proficiency level)))
+                       :attacks 1
+                       :max-hp max-hp
+                       :hp max-hp}
+                      (full-caster-spell-slots level))}))
 
 (defmethod take-turn class-key
   [world actor players enemies]

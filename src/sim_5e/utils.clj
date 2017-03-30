@@ -68,3 +68,67 @@
             world
             (range (or (-> world attacker :attacks) 1)))
     world))
+
+(defn full-caster-spell-slots
+  [level]
+  {:spell-1 (cond
+              (< level 2) 2
+              (< level 3) 3
+              :else 4)
+   :spell-2 (cond
+              (< level 3) 0
+              (< level 4) 2
+              :else 3)
+   :spell-3 (cond
+              (< level 5) 0
+              (< level 6) 2
+              :else 3)
+   :spell-4 (cond
+              (< level 7) 0
+              (< level 8) 1
+              (< level 9) 2
+              :else 3)
+   :spell-5 (cond
+              (< level 9) 0
+              (< level 10) 1
+              (< level 18) 2
+              :else 3)
+   :spell-6 (cond
+              (< level 11) 0
+              (< level 19) 1
+              :else 2)
+   :spell-7 (cond
+              (< level 13) 0
+              (< level 20) 1
+              :else 2)
+   :spell-8 (cond
+              (< level 15) 0
+              :else 1)
+   :spell-9 (cond
+              (< level 17) 0
+              :else 1)})
+
+(defn half-caster-spell-slots
+  [level]
+  {:spell-1 (cond
+              (< level 2) 0
+              (< level 3) 2
+              (< level 5) 3
+              :else 4)
+   :spell-2 (cond
+              (< level 5) 0
+              (< level 7) 2
+              :else 3)
+   :spell-3 (cond
+              (< level 9) 0
+              (< level 11) 2
+              :else 3)
+   :spell-4 (cond
+              (< level 13) 0
+              (< level 15) 1
+              (< level 17) 2
+              :else 3)
+   :spell-5 (cond
+              (< level 17) 0
+              (< level 19) 1
+              :else 2)})
