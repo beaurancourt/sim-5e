@@ -14,6 +14,10 @@
                       :init ((roll 20 0))
                       :hit (roll 20 (+ main-stat (proficiency level)))
                       :attacks (if (> level 4) 2 1)
+                      :attack-advantage false
+                      :attack-disadvantage false
+                      :defense-advantage false
+                      :defense-disadvantage false
                       :casting-mod casting-mod
                       :spell-dc (+ 8 casting-mod)
                       :max-hp max-hp

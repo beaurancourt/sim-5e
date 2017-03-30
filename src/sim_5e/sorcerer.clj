@@ -23,6 +23,10 @@
                        :hit (roll 20 casting-mod)
                        :casting-mod casting-mod
                        :spell-dc (+ 8 casting-mod)
+                       :attack-advantage false
+                       :attack-disadvantage false
+                       :defense-advantage false
+                       :defense-disadvantage false
                        :attacks 1
                        :max-hp max-hp
                        :hp max-hp}

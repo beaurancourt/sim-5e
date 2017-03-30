@@ -48,16 +48,49 @@
   [current-hp damage]
   (max 0 (- current-hp damage)))
 
+(defn advantage
+  [world attacker target]
+  (case [(-> world attacker :attack-advantage)
+         (-> world attacker :attack-disadvantage)
+         (-> world target :defense-advantage)
+         (-> world target :defense-disadvantage)]
+    [true true true true] :neither
+    [false true true true] :disadvantage
+    [true false true true] :advantage
+    [false false true true] :neither
+    [true true false true] :advantage
+    [false true false true] :neither
+    [true false false true] :advantage
+    [false false false true] :advantage
+    [true true true false] :disadvantage
+    [false true true false] :disadvantage
+    [true false true false] :neither
+    [false false true false] :disadvantage
+    [true true false false] :neither
+    [false true false false] :disadvantage
+    [true false false false] :advantage
+    [false false false false] :neither))
+
 (defn attack
   [world attacker players goblins]
   (reduce (fn [world _]
               (let [target (if (players attacker)
                              (pick-first-enemy world goblins)
                              (pick-random-target world players))
+
                     bless (if (-> world attacker :bless)
                             ((roll 4 0))
                             0)
-                    attack-roll (+ ((-> world attacker :hit)) bless)
+                    bane (if (-> world attacker :bane)
+                           ((roll 4 0))
+                           0)
+
+                    base-roll (case (advantage world attacker target)
+                                :advantage (max ((-> world attacker :hit)) ((-> world attacker :hit)))
+                                :disadvantage (min ((-> world attacker :hit)) ((-> world attacker :hit)))
+                                :neither ((-> world attacker :hit)))
+
+                    attack-roll (-> base-roll (+ bless) (- bane))
                     ac (-> world target :ac)]
                 (if (>= attack-roll ac)
                   (let [damage ((-> world attacker :damage))]

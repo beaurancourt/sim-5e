@@ -19,6 +19,10 @@
                      :casting-mod casting-mod
                      :spell-dc (+ 8 casting-mod)
                      :attacks 1
+                     :attack-advantage false
+                     :attack-disadvantage false
+                     :defense-advantage false
+                     :defense-disadvantage false
                      :max-hp max-hp
                      :hp max-hp}
                     (full-caster-spell-slots level))}))

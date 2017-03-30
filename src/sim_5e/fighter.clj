@@ -13,6 +13,10 @@
                :ac 18
                :init ((roll 20 0))
                :hit (roll 20 (+ main-stat (proficiency level)))
+               :attack-advantage false
+               :attack-disadvantage false
+               :defense-advantage false
+               :defense-disadvantage false
                :attacks (cond
                           (< level 5) 1
                           (< level 11) 2

@@ -20,18 +20,15 @@
                        :pc false
                        :ac 18
                        :init goblin-init
+                       :attack-advantage false
+                       :attack-disadvantage false
+                       :defense-advantage false
+                       :defense-disadvantage false
                        :attacks 2
                        :hit (roll 20 6)
                        :hp ((roll 5 8 20))}}))
             base-world
             (range goblins))))
-
-(defn- bane-enemies
-  [world]
-  (reduce (fn [world player]
-            (update-in world [player :bane] (constantly true)))
-          world
-          [:goblin1 :goblin2 :goblin3]))
 
 (defn simulate-round
   [world players goblins init-order round]
@@ -72,8 +69,5 @@
   (println 1 (simulate 1))
   (println 2 (simulate 2))
   (println 3 (simulate 3))
-  (println 4 (simulate 4))
-  (println 5 (simulate 5))
-  (println 6 (simulate 6))
-  (println 7 (simulate 7)))
+  (println 4 (simulate 4)))
 (-main)
