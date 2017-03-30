@@ -20,6 +20,7 @@
                        :pc false
                        :ac 18
                        :init goblin-init
+                       :reaction true
                        :attack-advantage false
                        :attack-disadvantage false
                        :defense-advantage false
@@ -31,12 +32,20 @@
             base-world
             (range goblins))))
 
+(defn- restore-reaction
+  [world]
+  (reduce (fn [world actor]
+            (update-in world [actor :reaction] (constantly true)))
+          world
+          (keys world)))
+
 (defn simulate-round
   [world players goblins init-order round]
-  (reduce (fn [world actor]
-            (take-turn world actor players goblins))
-          world
-          init-order))
+  (restore-reaction
+    (reduce (fn [world actor]
+              (take-turn world actor players goblins))
+            world
+            init-order)))
 
 (defn simulate-fight
   [world players goblins init-order round]
@@ -60,7 +69,7 @@
           init-order (sort-by #(-> world % :init (* -1)) (keys world))
           resources (simulate-fight world players goblins init-order 0)]
       (log "simulation# " rounds)
-      (if (< rounds 100)
+      (if (< rounds 3000)
         (recur (+ total (:hp resources)) (+ ko (:ko resources)) (inc rounds))
         {:hp (float (/ total rounds)) :ko (float (/ ko rounds))}))))
 
@@ -71,4 +80,3 @@
   (println 2 (simulate 2))
   (println 3 (simulate 3))
   (println 4 (simulate 4)))
-(-main)

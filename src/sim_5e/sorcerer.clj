@@ -23,6 +23,7 @@
                        :init ((roll 20 1))
                        :hit (roll 20 casting-mod)
                        :casting-mod casting-mod
+                       :reaction true
                        :spell-dc (+ 8 casting-mod)
                        :attack-advantage false
                        :attack-disadvantage false
@@ -42,5 +43,5 @@
   [world actor players enemies]
   (cond
     (<= (-> world actor :hp) 0) world
-    (> (-> world actor :spell-1) 0) (spells/burning-hands world actor :spell-1 (alive world enemies))
+    ;(> (-> world actor :spell-1) 0) (spells/burning-hands world actor :spell-1 (alive world enemies))
     :else (attack world actor players enemies)))

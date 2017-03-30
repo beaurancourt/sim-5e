@@ -74,24 +74,40 @@
 (defn attack
   [world attacker players goblins]
   (reduce (fn [world _]
-              (let [target (if (players attacker)
-                             (pick-first-enemy world goblins)
-                             (pick-random-target world players))
+            (let [target (if (players attacker)
+                           (pick-first-enemy world goblins)
+                           (pick-random-target world players))
 
-                    bless (if (-> world attacker :bless)
-                            ((roll 4 0))
-                            0)
-                    bane (if (-> world attacker :bane)
-                           ((roll 4 0))
-                           0)
+                  bless (if (-> world attacker :bless)
+                          ((roll 4 0))
+                          0)
+                  bane (if (-> world attacker :bane)
+                         ((roll 4 0))
+                         0)
 
-                    base-roll (case (advantage world attacker target)
-                                :advantage (max ((-> world attacker :hit)) ((-> world attacker :hit)))
-                                :disadvantage (min ((-> world attacker :hit)) ((-> world attacker :hit)))
-                                :neither ((-> world attacker :hit)))
+                  interposing (->> [:fighter :paladin]
+                                   (remove #(= target %))
+                                   (filter #(-> world % :reaction))
+                                   first)
+                  world (if interposing
+                          (do
+                            (log interposing " uses protection style against " attacker " to protect " target)
+                            (-> world
+                               (update-in [attacker :attack-disadvantage] (constantly true))
+                               (update-in [interposing :reaction] (constantly false))))
+                          world)
 
-                    attack-roll (-> base-roll (+ bless) (- bane))
-                    ac (-> world target :ac)]
+                  base-roll (case (advantage world attacker target)
+                              :advantage (max ((-> world attacker :hit)) ((-> world attacker :hit)))
+                              :disadvantage (min ((-> world attacker :hit)) ((-> world attacker :hit)))
+                              :neither ((-> world attacker :hit)))
+
+                  world (if interposing
+                          (update-in world [attacker :attack-disadvantage] (constantly false))
+                          world)
+
+                  attack-roll (-> base-roll (+ bless) (- bane))
+                  ac (-> world target :ac)]
                 (if (>= attack-roll ac)
                   (let [damage ((-> world attacker :damage))]
                     (log attacker " hits " target " for " damage

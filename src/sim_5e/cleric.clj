@@ -19,6 +19,7 @@
                      :casting-mod casting-mod
                      :spell-dc (+ 8 casting-mod)
                      :attacks 1
+                     :reaction true
                      :attack-advantage false
                      :attack-disadvantage false
                      :defense-advantage false
