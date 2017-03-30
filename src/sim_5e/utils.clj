@@ -60,8 +60,11 @@
                     attack-roll (+ ((-> world attacker :hit)) bless)]
                 (if (>= attack-roll (-> world target :ac))
                   (let [damage ((-> world attacker :damage))]
+                    (log attacker " hits " target " for " damage)
                     (update-in world [target :hp] do-damage damage))
-                  world)))
+                  (do
+                    (log attacker " misses " target)
+                    world))))
             world
             (range (or (-> world attacker :attacks) 1))))
 

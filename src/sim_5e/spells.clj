@@ -4,6 +4,7 @@
 
 (defn bless
   [world actor spell-level targets]
+  (log actor " blesses " targets)
   (reduce (fn [world target]
             (update-in world [target :bless] (constantly true)))
           (update-in world [actor spell-level] - 1)
