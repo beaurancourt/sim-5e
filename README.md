@@ -1,10 +1,10 @@
 # sim-5e
 
-A Clojure library designed to ... well, that part is up to you.
+A clojure app designed to simulate different DnD 5e APLs
 
 ## Usage
 
-FIXME
+`lein run`
 
 ## License
 
