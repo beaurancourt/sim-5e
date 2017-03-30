@@ -4,4 +4,6 @@
 
 (defmethod take-turn :default
   [world actor players enemies]
-  (attack world actor players enemies))
+  (cond
+    (<= (-> world actor :hp) 0) world
+    :else (attack world actor players enemies)))

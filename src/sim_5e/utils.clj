@@ -44,10 +44,13 @@
   [& s]
   (spit "log.txt" (str (apply str s) "\n") :append true))
 
+(defn do-damage
+  [current-hp damage]
+  (max 0 (- current-hp damage)))
+
 (defn attack
   [world attacker players goblins]
-  (if (> (-> world attacker :hp) 0)
-    (reduce (fn [world _]
+  (reduce (fn [world _]
               (let [target (if (players attacker)
                              (pick-first-enemy world goblins)
                              (pick-random-target world players))
@@ -56,18 +59,11 @@
                             0)
                     attack-roll (+ ((-> world attacker :hit)) bless)]
                 (if (>= attack-roll (-> world target :ac))
-                  (let [damage ((-> world attacker :damage))
-                        updated-world (update-in world [target :hp] - damage)]
-                    (if (and (= target :cleric) (< ((roll 20 2)) 10))
-                      (reduce (fn [world player]
-                                (update-in world [player :bless] (constantly false)))
-                              updated-world
-                              [:paladin :cleric :fighter])
-                      updated-world))
+                  (let [damage ((-> world attacker :damage))]
+                    (update-in world [target :hp] do-damage damage))
                   world)))
             world
-            (range (or (-> world attacker :attacks) 1)))
-    world))
+            (range (or (-> world attacker :attacks) 1))))
 
 (defn full-caster-spell-slots
   [level]

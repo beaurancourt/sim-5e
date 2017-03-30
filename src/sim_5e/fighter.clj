@@ -3,6 +3,7 @@
     [sim-5e.utils :refer :all]))
 
 (def class-key :fighter)
+
 (defmethod generate-pc class-key
   [level _]
   (let [main-stat (main-stat level)
@@ -21,4 +22,6 @@
 
 (defmethod take-turn class-key
   [world actor players enemies]
-  (attack world actor players enemies))
+  (cond
+    (<= (-> world actor :hp) 0) world
+    :else (attack world actor players enemies)))
