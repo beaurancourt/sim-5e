@@ -26,13 +26,6 @@
             base-world
             (range goblins))))
 
-(defn- bless-players
-  [world]
-  (reduce (fn [world player]
-            (update-in world [player :bless] (constantly true)))
-          world
-          [:paladin :cleric :fighter]))
-
 (defn- bane-enemies
   [world]
   (reduce (fn [world player]

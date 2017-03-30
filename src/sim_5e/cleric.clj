@@ -1,6 +1,7 @@
 (ns sim-5e.cleric
   (:require
-    [sim-5e.utils :refer :all]))
+    [sim-5e.utils :refer :all]
+    [sim-5e.spells :as spells]))
 
 (def class-key :cleric)
 
@@ -17,8 +18,15 @@
                      :max-hp max-hp
                      :hp max-hp}
                     (full-caster-spell-slots level))}))
-
+(defn- cast-bless?
+  "Cast bless if there are 3 alive players without bless"
+  [world players enemies]
+  (= (count (filter #(-> world % :bless not)
+                    (alive world players)))
+     3))
 
 (defmethod take-turn class-key
   [world actor players enemies]
-  (attack world actor players enemies))
+  (cond
+    (cast-bless? world players enemies) (spells/bless world actor :spell-1 (take 3 (alive world players)))
+    :else (attack world actor players enemies)))
