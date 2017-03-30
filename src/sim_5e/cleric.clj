@@ -2,8 +2,8 @@
   (:require
     [sim-5e.utils :refer :all]))
 
-(defn generate-cleric
-  [level]
+(defmethod generate-pc :cleric
+  [level _]
   (let [main-stat 3
         max-hp (+ 10 (* (- level 1) 7))]
     {:cleric {:damage (roll 8 3)

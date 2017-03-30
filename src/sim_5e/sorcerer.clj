@@ -2,8 +2,8 @@
   (:require
     [sim-5e.utils :refer :all]))
 
-(defn generate-sorcerer
-  [level]
+(defmethod generate-pc :sorcerer
+  [level _]
   (let [main-stat (main-stat level)
         firebolt-dice (cond
                         (< level 5) 1

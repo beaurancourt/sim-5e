@@ -2,8 +2,8 @@
   (:require
     [sim-5e.utils :refer :all]))
 
-(defn generate-fighter
-  [level]
+(defmethod generate-pc :fighter
+  [level _]
   (let [main-stat (main-stat level)
         max-hp (+ 12 (* (- level 1) 8))]
     {:fighter {:damage (roll 1 8 (+ main-stat 2))

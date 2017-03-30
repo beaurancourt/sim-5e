@@ -2,8 +2,8 @@
   (:require
     [sim-5e.utils :refer :all]))
 
-(defn generate-paladin
-  [level]
+(defmethod generate-pc :paladin
+  [level _]
   (let [main-stat (main-stat level)
         max-hp (+ 12 (* (- level 1) 8))]
     {:paladin {:damage (roll 1 8 (+ main-stat 2))

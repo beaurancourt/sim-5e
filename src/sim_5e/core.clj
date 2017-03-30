@@ -6,14 +6,6 @@
     [sim-5e.sorcerer :as sorcerer]
     [sim-5e.utils :refer :all]))
 
-(defn- generate-pc
-  [player-level pc-class]
-  (case pc-class
-    :paladin (paladin/generate-paladin player-level)
-    :cleric (cleric/generate-cleric player-level)
-    :fighter (fighter/generate-fighter player-level)
-    :sorcerer (sorcerer/generate-sorcerer player-level)))
-
 (defn- generate-world
   [goblins player-level]
   (let [base-world (reduce #(merge %1 (generate-pc player-level %2))
@@ -32,18 +24,6 @@
                        :hp ((roll 5 8 20))}}))
             base-world
             (range goblins))))
-
-(defn- alive
-  [world actors]
-  (filter #(> (-> world % :hp) 0) actors))
-
-(defn- pick-player-target
-  [world goblins]
-  (or (first (alive world goblins)) :goblin0))
-
-(defn- pick-goblin-target
-  [world players]
-  (rand-nth (or (seq (alive world players)) [:paladin])))
 
 (defn- bless-players
   [world]
@@ -64,8 +44,8 @@
   (if (> (-> world attacker :hp) 0)
     (reduce (fn [world _]
               (let [target (if (players attacker)
-                             (pick-player-target world goblins)
-                             (pick-goblin-target world players))
+                             (pick-first-enemy world goblins)
+                             (pick-random-target world players))
                     bless (if (-> world attacker :bane)
                             (* -1 ((roll 4 0)))
                             0)
@@ -87,14 +67,11 @@
 (defn simulate-round
   [world players goblins init-order round bless]
   (reduce (fn [world actor]
-            (let [target (if (players actor)
-                           (pick-player-target world goblins)
-                           (pick-goblin-target world players))]
-              (if (and (= actor :cleric)
-                       (= round 0)
-                       bless)
-                (bless-players world)
-                (attack world actor players goblins))))
+            (if (and (= actor :cleric)
+                     (= round 0)
+                     bless)
+              (bless-players world)
+              (attack world actor players goblins)))
           world
           init-order))
 
@@ -102,6 +79,7 @@
   [world players goblins init-order round bless]
   (loop [world world
          round round]
+    (log "round# " round)
     (if (and (seq (alive world players))
              (seq (alive world goblins)))
       (recur (simulate-round world players goblins init-order round bless) (inc round))
@@ -118,12 +96,14 @@
           players (set player-list)
           init-order (sort-by #(-> world % :init (* -1)) (keys world))
           resources (simulate-fight world players goblins init-order 0 bless)]
-      (if (< rounds 3000)
+      (log "simulation# " rounds)
+      (if (< rounds 100)
         (recur (+ total (:hp resources)) (+ ko (:ko resources)) (inc rounds))
         {:hp (float (/ total rounds)) :ko (float (/ ko rounds))}))))
 
 (defn -main
   []
+  (spit "log.txt" "")
   (println 1 (test-bless 1 true) (test-bless 1 false))
   (println 2 (test-bless 2 true) (test-bless 2 false))
   (println 3 (test-bless 3 true) (test-bless 3 false))
@@ -131,3 +111,4 @@
   (println 5 (test-bless 5 true) (test-bless 5 false))
   (println 6 (test-bless 6 true) (test-bless 6 false))
   (println 7 (test-bless 7 true) (test-bless 7 false)))
+(-main)
