@@ -2,7 +2,9 @@
   (:require
     [sim-5e.utils :refer :all]))
 
-(defmethod generate-pc :sorcerer
+(def class-key :sorcerer)
+
+(defmethod generate-pc class-key
   [level _]
   (let [main-stat (main-stat level)
         firebolt-dice (cond
@@ -20,3 +22,7 @@
                 :attacks 1
                 :max-hp max-hp
                 :hp max-hp}}))
+
+(defmethod take-turn class-key
+  [world actor players enemies]
+  (attack world actor players enemies))

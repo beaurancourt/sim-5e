@@ -2,7 +2,8 @@
   (:require
     [sim-5e.utils :refer :all]))
 
-(defmethod generate-pc :paladin
+(def class-key :paladin)
+(defmethod generate-pc class-key
   [level _]
   (let [main-stat (main-stat level)
         max-hp (+ 12 (* (- level 1) 8))]
@@ -14,3 +15,7 @@
                :attacks (if (> level 4) 2 1)
                :max-hp max-hp
                :hp max-hp}}))
+
+(defmethod take-turn class-key
+  [world actor players enemies]
+  (attack world actor players enemies))
