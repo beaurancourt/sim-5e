@@ -1,6 +1,7 @@
 (ns sim-5e.sorcerer
   (:require
-    [sim-5e.utils :refer :all]))
+    [sim-5e.utils :refer :all]
+    [sim-5e.spells :as spells]))
 
 (def class-key :sorcerer)
 
@@ -32,8 +33,14 @@
                        :hp max-hp}
                       (full-caster-spell-slots level))}))
 
+(defn- burning-hands?
+  [world actor players enemies]
+  (and
+    (> (-> world actor :spell-1) 0)))
+
 (defmethod take-turn class-key
   [world actor players enemies]
   (cond
     (<= (-> world actor :hp) 0) world
+    (> (-> world actor :spell-1) 0) (spells/burning-hands world actor :spell-1 (alive world enemies))
     :else (attack world actor players enemies)))

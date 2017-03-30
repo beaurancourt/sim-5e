@@ -15,7 +15,7 @@
         goblin-init ((roll 20 9))]
     (reduce (fn [world index]
               (merge world
-                     {(keyword (str "goblin" index))
+                     {(keyword (str "orog" index))
                       {:damage (roll 1 12 4)
                        :pc false
                        :ac 18
@@ -24,6 +24,7 @@
                        :attack-disadvantage false
                        :defense-advantage false
                        :defense-disadvantage false
+                       :dex-save 1
                        :attacks 2
                        :hit (roll 20 6)
                        :hp ((roll 5 8 20))}}))

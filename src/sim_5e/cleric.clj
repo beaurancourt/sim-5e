@@ -28,14 +28,18 @@
                     (full-caster-spell-slots level))}))
 (defn- cast-bless?
   "Cast bless if there are 3 alive players without bless"
-  [world players enemies]
-  (>= (count (filter #(-> world % :bless not)
-                     (alive world players)))
-      3))
+  [world actor players enemies]
+  (and
+    (> (-> world actor :spell-1) 0)
+    (>= (count (filter #(-> world % :bless not)
+                      (alive world players)))
+       3)))
 
 (defn- cast-cure-wounds?
-  [world players enemies]
-  (not= (count players) (count (alive world players))))
+  [world actor players enemies]
+  (and
+    (> (-> world actor :spell-1) 0)
+    (not= (count players) (count (alive world players)))))
 
 (defn- bring-up-friend
   [world actor spell-level players]
@@ -46,6 +50,6 @@
   [world actor players enemies]
   (cond
     (<= (-> world actor :hp) 0) world
-    (cast-cure-wounds? world players enemies) (bring-up-friend world actor :spell-1 players)
-    (cast-bless? world players enemies) (spells/bless world actor :spell-1 (take 3 (alive world players)))
+    (cast-cure-wounds? world actor players enemies) (bring-up-friend world actor :spell-1 players)
+    (cast-bless? world actor players enemies) (spells/bless world actor :spell-1 (take 3 (alive world players)))
     :else (attack world actor players enemies)))
