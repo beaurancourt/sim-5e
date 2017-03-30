@@ -54,13 +54,15 @@
               (let [target (if (players attacker)
                              (pick-first-enemy world goblins)
                              (pick-random-target world players))
-                    bless (if (-> world attacker :bane)
-                            (* -1 ((roll 4 0)))
+                    bless (if (-> world attacker :bless)
+                            ((roll 4 0))
                             0)
-                    attack-roll (+ ((-> world attacker :hit)) bless)]
-                (if (>= attack-roll (-> world target :ac))
+                    attack-roll (+ ((-> world attacker :hit)) bless)
+                    ac (-> world target :ac)]
+                (if (>= attack-roll ac)
                   (let [damage ((-> world attacker :damage))]
-                    (log attacker " hits " target " for " damage)
+                    (log attacker " hits " target " for " damage
+                         (if (< (- attack-roll bless) ac) " #blessed" ""))
                     (update-in world [target :hp] do-damage damage))
                   (do
                     (log attacker " misses " target)

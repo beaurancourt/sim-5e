@@ -25,9 +25,9 @@
 (defn- cast-bless?
   "Cast bless if there are 3 alive players without bless"
   [world players enemies]
-  (= (count (filter #(-> world % :bless not)
-                    (alive world players)))
-     3))
+  (>= (count (filter #(-> world % :bless not)
+                     (alive world players)))
+      3))
 
 (defn- cast-cure-wounds?
   [world players enemies]
