@@ -1,44 +1,24 @@
-(ns sim-5e.core)
+(ns sim-5e.core
+  (:require
+    [sim-5e.paladin :as paladin]
+    [sim-5e.cleric :as cleric]
+    [sim-5e.fighter :as fighter]
+    [sim-5e.sorcerer :as sorcerer]
+    [sim-5e.utils :refer :all]))
 
-(defn- sum [coll] (reduce + 0 coll))
-
-(defn- roll
-  ([dice modifier]
-   (fn [] (+ (rand-int dice) modifier 1)))
-  ([n dice modifier]
-   (fn []
-     (reduce (fn [total _] (+ total (rand-int dice)))
-             (+ n modifier)
-             (range n)))))
+(defn- generate-pc
+  [player-level pc-class]
+  (case pc-class
+    :paladin (paladin/generate-paladin player-level)
+    :cleric (cleric/generate-cleric player-level)
+    :fighter (fighter/generate-fighter player-level)
+    :sorcerer (sorcerer/generate-sorcerer player-level)))
 
 (defn- generate-world
-  [goblins]
-  (let [base-world {:paladin {:damage (roll 1 8 6)
-                              :pc true
-                              :ac 18
-                              :init ((roll 20 0))
-                              :hit (roll 20 7)
-                              :attacks 2
-                              :hp 50}
-                    :cleric {:damage (roll 8 3)
-                             :pc true
-                             :ac 18
-                             :init ((roll 20 0))
-                             :hit (roll 20 7)
-                             :hp 38}
-                    :fighter {:damage (roll 8 6)
-                              :pc true
-                              :ac 18
-                              :init ((roll 20 0))
-                              :hit (roll 20 7)
-                              :attacks 2
-                              :hp 50}
-                    :sorcerer {:damage (roll 2 10 0)
-                               :pc true
-                               :ac 15
-                               :init ((roll 20 1))
-                               :hit (roll 20 7)
-                               :hp 37}}
+  [goblins player-level]
+  (let [base-world (reduce #(merge %1 (generate-pc player-level %2))
+                           {}
+                           [:paladin :cleric :fighter :sorcerer])
         goblin-init ((roll 20 9))]
     (reduce (fn [world index]
               (merge world
@@ -133,7 +113,7 @@
   (loop [total 0
          ko 0
          rounds 0]
-    (let [world (generate-world goblin-count)
+    (let [world (generate-world goblin-count 5)
           [player-list goblins] ((juxt filter remove) #(-> world % :pc) (keys world))
           players (set player-list)
           init-order (sort-by #(-> world % :init (* -1)) (keys world))
