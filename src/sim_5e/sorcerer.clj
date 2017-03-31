@@ -62,8 +62,8 @@
   [world actor players enemies]
   (cond
     (<= (-> world actor :hp) 0) world
-    (slow? world actor players enemies) (spells/slow world actor :spell-3 enemies)
     (fireball? world actor players enemies) (spells/fireball world actor :spell-3 enemies)
+    (slow? world actor players enemies) (spells/slow world actor :spell-3 enemies)
     (twin-haste? world actor players enemies) (spells/twin-haste world actor :spell-3 [:paladin :fighter])
     (> (-> world actor :spell-1) 0) (spells/burning-hands world actor :spell-1 enemies)
     :else (attack world actor players enemies)))
