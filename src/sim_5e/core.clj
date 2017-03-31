@@ -26,22 +26,25 @@
                        :defense-advantage false
                        :defense-disadvantage false
                        :dex-save 1
+                       :wis-save 0
                        :attacks 2
                        :hit (roll 20 6)
                        :hp ((roll 5 8 20))}}))
             base-world
             (range goblins))))
 
-(defn- restore-reaction
+(defn- end-of-round-cleanup
   [world]
   (reduce (fn [world actor]
-            (update-in world [actor :reaction] (constantly true)))
+            (-> world
+                (update-in [actor :reaction] (constantly true))
+                (update-in [actor :shield-bonus] (constantly 0))))
           world
           (keys world)))
 
 (defn simulate-round
   [world players goblins init-order round]
-  (restore-reaction
+  (end-of-round-cleanup
     (reduce (fn [world actor]
               (take-turn world actor players goblins))
             world
@@ -55,13 +58,11 @@
     (if (and (seq (alive world players))
              (seq (alive world goblins)))
       (recur (simulate-round world players goblins init-order round) (inc round))
-      {:hp (sum (map #(-> world % :hp (max 0)) players))
-       :ko (count (filter #(-> world % :hp (< 0)) players))})))
+      {:hp (sum (map #(-> world % :hp (max 0)) players))})))
 
 (defn- simulate
   [goblin-count]
   (loop [total 0
-         ko 0
          rounds 0]
     (let [world (generate-world goblin-count 5)
           [player-list goblins] ((juxt filter remove) #(-> world % :pc) (keys world))
@@ -70,13 +71,13 @@
           resources (simulate-fight world players goblins init-order 0)]
       (log "simulation# " rounds)
       (if (< rounds 3000)
-        (recur (+ total (:hp resources)) (+ ko (:ko resources)) (inc rounds))
-        {:hp (float (/ total rounds)) :ko (float (/ ko rounds))}))))
+        (recur (+ total (:hp resources)) (inc rounds))
+        {:hp (float (/ total rounds))}))))
 
 (defn -main
   []
   (spit "log.txt" "")
-  (println 1 (simulate 1))
   (println 2 (simulate 2))
   (println 3 (simulate 3))
-  (println 4 (simulate 4)))
+  (println 4 (simulate 4))
+  (println 5 (simulate 5)))
