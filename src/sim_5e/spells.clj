@@ -48,3 +48,16 @@
               (update-in world [target :hp] do-damage damage)))
           (update-in world [actor spell-level] - 1)
           targets))
+
+(defn twin-haste
+  [world actor spell-level targets]
+  (reduce (fn [world target]
+            (log actor " casts haste on " target)
+            (-> world
+                (update-in [target :ac] + 2)
+                (update-in [target :attacks] + 1)
+                (update-in [target :hasted] (constantly true))))
+          (-> world
+              (update-in [actor spell-level] - 1)
+              (update-in [actor :concentrating] (constantly true)))
+          targets))
