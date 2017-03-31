@@ -40,7 +40,7 @@
   (reduce (fn [world target]
             (let [dex-save ((roll 20 (-> world target :dex-save)))
                   saved (>= dex-save (-> world actor :spell-dc))
-                  damage-roll ((roll (+ 2 (spell-level-to-num spell-level)) 6))
+                  damage-roll ((roll (+ 2 (spell-level-to-num spell-level)) 6 0))
                   damage (if (>= dex-save (-> world actor :spell-dc))
                            (int (/ damage-roll 2))
                            damage-roll)]
