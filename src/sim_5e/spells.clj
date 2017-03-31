@@ -75,3 +75,21 @@
               (update-in world [target :hp] do-damage damage)))
           (update-in world [actor spell-level] - 1)
           targets))
+
+(defn slow
+  [world actor spell-level targets]
+  (reduce (fn [world target]
+            (let [wis-save ((roll 20 (-> world target :wis-save)))]
+              (if (< wis-save (-> world actor :spell-dc))
+                (do
+                  (log :sorcerer " hits " target " with slow")
+                  (-> world
+                      (update-in [target :ac] - 2)
+                      (update-in [target :attacks] (constantly 1))))
+                (do
+                  (log :sorcerer " misses " target " with slow")
+                  world))))
+          (-> world
+              (update-in [actor spell-level] - 1)
+              (update-in [actor :concentrating] (constantly true)))
+          targets))
