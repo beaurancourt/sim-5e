@@ -7,8 +7,16 @@
 (defmethod generate-pc class-key
   [level _]
   (let [main-stat (main-stat level)
-        max-hp (+ 12 (* (- level 1) 8))]
-    {:fighter {:damage (roll 1 8 (+ main-stat 2))
+        max-hp (+ 12 (* (- level 1) 8))
+        two-hand-damage
+        (fn []
+          (let [roll1 ((roll 6 0))
+                roll2 ((roll 6 0))
+                bonus (+ main-stat 10)]
+            (+ (if (< roll1 3) ((roll 6 0)) roll1)
+               (if (< roll2 3) ((roll 6 0)) roll2)
+               bonus)))]
+    {:fighter {:damage (roll 8 (+ main-stat 2))
                :pc true
                :ac 18
                :init ((roll 20 0))
