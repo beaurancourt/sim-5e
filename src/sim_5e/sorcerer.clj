@@ -37,7 +37,8 @@
 (defn- burning-hands?
   [world actor players enemies]
   (and
-    (> (-> world actor :spell-1) 0)))
+    (> (-> world actor :spell-1) 2)))
+
 (defn- twin-haste?
   [world actor players enemies]
   (and
