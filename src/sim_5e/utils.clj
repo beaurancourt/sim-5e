@@ -85,16 +85,19 @@
                          ((roll 4 0))
                          0)
 
-                  interposing (->> [:fighter :paladin]
+                  interposing (->> [:cleric]
                                    (remove #(= target %))
-                                   (filter #(-> world % :reaction))
+                                   (filter #(and
+                                              (players target)
+                                              (-> world % :protection-style)
+                                              (-> world % :reaction)))
                                    first)
                   world (if interposing
                           (do
                             (log interposing " uses protection style against " attacker " to protect " target)
                             (-> world
-                               (update-in [attacker :attack-disadvantage] (constantly true))
-                               (update-in [interposing :reaction] (constantly false))))
+                                (update-in [attacker :attack-disadvantage] (constantly true))
+                                (update-in [interposing :reaction] (constantly false))))
                           world)
 
                   base-roll (case (advantage world attacker target)
@@ -107,17 +110,31 @@
                           world)
 
                   attack-roll (-> base-roll (+ bless) (- bane))
-                  ac (-> world target :ac)]
-                (if (>= attack-roll ac)
-                  (let [damage ((-> world attacker :damage))]
-                    (log attacker " hits " target " for " damage
-                         (if (< (- attack-roll bless) ac) " #blessed" ""))
-                    (update-in world [target :hp] do-damage damage))
-                  (do
-                    (log attacker " misses " target)
-                    world))))
-            world
-            (range (or (-> world attacker :attacks) 1))))
+                  shield-bonus (or (-> world target :shield-bonus) 0)
+                  ac (+ (-> world target :ac) shield-bonus)
+                  [world ac] (if (and
+                                   (= target :sorcerer)
+                                   (= shield-bonus 0)
+                                   (> (-> world :sorcerer :spell-1) 0)
+                                   (>= attack-roll ac)
+                                   (< attack-roll (+ ac 5)))
+                               (do
+                                 (log "the sorcerer uses shield to block " attacker)
+                                 [(-> world
+                                      (update-in [:sorcerer :shield-bonus] (constantly 5))
+                                      (update-in [:sorcerer :spell-1] - 1))
+                                  (+ ac 5)])
+                               [world ac])]
+              (if (>= attack-roll ac)
+                (let [damage ((-> world attacker :damage))]
+                  (log attacker " hits " target " for " damage
+                       (if (< (- attack-roll bless) ac) " #blessed" ""))
+                  (update-in world [target :hp] do-damage damage))
+                (do
+                  (log attacker " misses " target)
+                  world))))
+          world
+          (range (or (-> world attacker :attacks) 1))))
 
 (defn full-caster-spell-slots
   [level]
