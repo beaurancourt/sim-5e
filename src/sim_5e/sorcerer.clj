@@ -46,10 +46,15 @@
     (-> world actor :concentrating not)
     (= (->> [:paladin :fighter] (alive world) (remove #(-> world % :hasted))) [:paladin :fighter])))
 
+(defn- fireball?
+  [world actor players enemies]
+  (and
+   (> (-> world actor :spell-3) 0)))
 (defmethod take-turn class-key
   [world actor players enemies]
   (cond
     (<= (-> world actor :hp) 0) world
-    ;(> (-> world actor :spell-1) 0) (spells/burning-hands world actor :spell-1 (alive world enemies))
+    (fireball? world actor players enemies) (spells/fireball world actor :spell-3 enemies)
     (twin-haste? world actor players enemies) (spells/twin-haste world actor :spell-3 [:paladin :fighter])
+    (> (-> world actor :spell-1) 0) (spells/burning-hands world actor :spell-1 enemies)
     :else (attack world actor players enemies)))

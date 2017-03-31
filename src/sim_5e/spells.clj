@@ -61,3 +61,17 @@
               (update-in [actor spell-level] - 1)
               (update-in [actor :concentrating] (constantly true)))
           targets))
+
+(defn fireball
+  [world actor spell-level targets]
+  (reduce (fn [world target]
+            (let [dex-save ((roll 20 (-> world target :dex-save)))
+                  saved (>= dex-save (-> world actor :spell-dc))
+                  damage-roll ((roll (+ 5 (spell-level-to-num spell-level)) 6 0))
+                  damage (if (>= dex-save (-> world actor :spell-dc))
+                           (int (/ damage-roll 2))
+                           damage-roll)]
+              (log actor " casts fireball on " target " for " damage)
+              (update-in world [target :hp] do-damage damage)))
+          (update-in world [actor spell-level] - 1)
+          targets))
