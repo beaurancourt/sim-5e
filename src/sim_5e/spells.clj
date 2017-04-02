@@ -93,3 +93,27 @@
               (update-in [actor spell-level] - 1)
               (update-in [actor :concentrating] (constantly true)))
           targets))
+
+(defn conjure-animals
+  [world actor spell-level]
+  (log actor " conjures 8 wolves")
+  (let [wolf-init ((roll 20 2))]
+    (reduce (fn [world index]
+              (merge world
+                     {(keyword (str "wolf" index))
+                      {:pc true
+                       :ac 13
+                       :init wolf-init
+                       :reaction true
+                       :attack-advantage false
+                       :attack-disadvantage true
+                       :defense-advantage false
+                       :defense-disadvantage false
+                       :dex-save 1
+                       :wis-save 0
+                       :attacks [{:num 2 :sides 4 :mod 2 :hit 4}]
+                       :hp ((roll 2 8 2))}}))
+            (-> world
+                (update-in [actor spell-level] - 1)
+                (update-in [actor :concentrating] (constantly true)))
+            (range 8))))
