@@ -53,8 +53,9 @@
 (defn pre-combat-actions
   [world players]
   (-> world
-      (spells/conjure-animals :sorcerer :spell-3)
-      (spells/bless :cleric :spell-1 [:fighter :paladin :cleric])
+      ;(spells/shield-of-faith :cleric :spell-1 :fighter)
+      ;(spells/conjure-animals :sorcerer :spell-3)
+      ;(spells/bless :cleric :spell-1 [:fighter :paladin :cleric])
       ))
 
 (defn simulate-fight

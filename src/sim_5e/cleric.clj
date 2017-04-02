@@ -51,5 +51,4 @@
   (cond
     (<= (-> world actor :hp) 0) world
     (cast-cure-wounds? world actor players enemies) (bring-up-friend world actor :spell-1 players)
-    (cast-bless? world actor players enemies) (spells/bless world actor :spell-1 (take 3 (alive world players)))
     :else (attack world actor players enemies)))

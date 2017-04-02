@@ -117,3 +117,11 @@
                 (update-in [actor spell-level] - 1)
                 (update-in [actor :concentrating] (constantly true)))
             (range 8))))
+
+(defn shield-of-faith
+  [world actor spell-level target]
+  (log actor " casts shield of faith on " target)
+  (-> world
+      (update-in [actor spell-level] - 1)
+      (update-in [actor :concentrating] (constantly true))
+      (update-in [target :ac] + 2)))
