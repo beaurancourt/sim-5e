@@ -4,6 +4,7 @@
     [sim-5e.cleric :as cleric]
     [sim-5e.fighter :as fighter]
     [sim-5e.sorcerer :as sorcerer]
+    [sim-5e.spells :as spells]
     [sim-5e.enemy]
     [sim-5e.utils :refer :all]))
 
@@ -49,6 +50,13 @@
             world
             init-order)))
 
+(defn pre-combat-actions
+  [world players]
+  (-> world
+      (spells/conjure-animals :sorcerer :spell-3)
+      (spells/bless :cleric :spell-1 [:fighter :paladin :cleric])
+      ))
+
 (defn simulate-fight
   [world players goblins init-order round]
   (loop [world world
@@ -63,12 +71,13 @@
   [goblin-count]
   (loop [total 0
          rounds 0]
+    (log "simulation# " rounds)
     (let [world (generate-world goblin-count 5)
           [player-list goblins] ((juxt filter remove) #(-> world % :pc) (keys world))
           players (set player-list)
+          world (pre-combat-actions world players)
           init-order (sort-by #(-> world % :init (* -1)) (keys world))
-          resources (simulate-fight world players goblins init-order 0)]
-      (log "simulation# " rounds)
+          resources (simulate-fight world players goblins 0)]
       (if (< rounds 3000)
         (recur (+ total (:hp resources)) (inc rounds))
         {:hp (float (/ total rounds))}))))

@@ -4,7 +4,16 @@
 
 (defn roll
   ([attack-map]
-   (roll (:num attack-map) (:sides attack-map) (:mod attack-map)))
+   (if-not (:two-handed attack-map)
+     (roll (:num attack-map) (:sides attack-map) (:mod attack-map))
+     (fn []
+       (+ (sum (map (fn [_]
+                      (let [r ((roll (:sides attack-map) 0))]
+                        (if (< r 3)
+                          ((roll (:sides attack-map) 0))
+                          r)))
+                    (range (:num attack-map))))
+          (:mod attack-map)))))
   ([dice modifier]
    (fn [] (+ (rand-int dice) modifier 1)))
   ([n dice modifier]
