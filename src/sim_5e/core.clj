@@ -58,14 +58,17 @@
       ))
 
 (defn simulate-fight
-  [world players goblins init-order round]
+  [world players goblins round]
   (loop [world world
          round round]
     (log "round# " round)
-    (if (and (seq (alive world players))
-             (seq (alive world goblins)))
-      (recur (simulate-round world players goblins init-order round) (inc round))
-      {:hp (sum (map #(-> world % :hp (max 0)) players))})))
+    (let [init-order (sort-by #(-> world % :init (* -1)) (keys world))]
+      (if (and (seq (alive world players))
+               (seq (alive world goblins)))
+        (recur (simulate-round world players goblins init-order round) (inc round))
+        {:hp (sum
+               (map #(-> world % :hp (max 0))
+                    (filter #(-> world % :summoned not) players)))}))))
 
 (defn- simulate
   [goblin-count]
