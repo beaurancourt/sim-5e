@@ -8,21 +8,17 @@
   [level _]
   (let [main-stat (main-stat level)
         max-hp (+ 12 (* (- level 1) 8))
-        two-hand-damage
-        (fn []
-          (let [roll1 ((roll 6 0))
-                roll2 ((roll 6 0))
-                bonus (+ main-stat 10)]
-            (+ (if (< roll1 3) ((roll 6 0)) roll1)
-               (if (< roll2 3) ((roll 6 0)) roll2)
-               bonus)))
-        melee-attack {:num 1 :sides 8 :mod (+ main-stat 2) :hit (+ main-stat (proficiency level))}
+        proficiency (proficiency level)
+        to-hit (+ main-stat proficiency)
+        light-attack {:num 1 :sides 6 :mod main-stat :hit to-hit}
+        melee-attack {:num 1 :sides 8 :mod (+ main-stat 0) :hit to-hit}
+        two-handed {:num 2 :sides 6 :mod main-stat :hit to-hit :two-handed false}
         number-of-attacks (cond
                             (< level 5) 1
                             (< level 11) 2
                             :else 3)]
     {:fighter {:pc true
-               :ac 18
+               :ac 19
                :init ((roll 20 0))
                :protection-style false
                :attack-advantage false
@@ -30,7 +26,9 @@
                :reaction true
                :defense-advantage false
                :defense-disadvantage false
+               ;:attacks (mapv (constantly two-handed) (range number-of-attacks))
                :attacks (mapv (constantly melee-attack) (range number-of-attacks))
+               ;:attacks (mapv (constantly light-attack) (range (+ number-of-attacks 1))) ; two weapon fighting
                :max-hp max-hp
                :hp max-hp}}))
 
