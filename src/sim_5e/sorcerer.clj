@@ -17,11 +17,9 @@
         proficiency (proficiency level)
         casting-mod (+ main-stat proficiency)
         max-hp (+ 10 (* (- level 1) 7))]
-    {:sorcerer (merge {:damage (roll firebolt-dice 10 fire-bolt-mod)
-                       :pc true
+    {:sorcerer (merge {:pc true
                        :ac 15
                        :init ((roll 20 1))
-                       :hit (roll 20 casting-mod)
                        :casting-mod casting-mod
                        :reaction true
                        :spell-dc (+ 8 casting-mod)
@@ -29,7 +27,10 @@
                        :attack-disadvantage false
                        :defense-advantage false
                        :defense-disadvantage false
-                       :attacks 1
+                       :attacks [{:num firebolt-dice
+                                  :sides 10
+                                  :mod fire-bolt-mod
+                                  :hit (+ main-stat proficiency)}]
                        :max-hp max-hp
                        :hp max-hp}
                       (full-caster-spell-slots level))}))

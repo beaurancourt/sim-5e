@@ -16,8 +16,7 @@
     (reduce (fn [world index]
               (merge world
                      {(keyword (str "orog" index))
-                      {:damage (roll 1 12 4)
-                       :pc false
+                      {:pc false
                        :ac 18
                        :init goblin-init
                        :reaction true
@@ -27,8 +26,8 @@
                        :defense-disadvantage false
                        :dex-save 1
                        :wis-save 0
-                       :attacks 2
-                       :hit (roll 20 6)
+                       :attacks [{:num 1 :sides 12 :mod 4 :hit 6}
+                                 {:num 1 :sides 12 :mod 4 :hit 6}]
                        :hp ((roll 5 8 20))}}))
             base-world
             (range goblins))))

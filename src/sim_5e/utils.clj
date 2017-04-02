@@ -3,6 +3,8 @@
 (defn sum [coll] (reduce + 0 coll))
 
 (defn roll
+  ([attack-map]
+   (roll (:num attack-map) (:sides attack-map) (:mod attack-map)))
   ([dice modifier]
    (fn [] (+ (rand-int dice) modifier 1)))
   ([n dice modifier]
@@ -73,7 +75,7 @@
 
 (defn attack
   [world attacker players goblins]
-  (reduce (fn [world _]
+  (reduce (fn [world attack-map]
             (let [target (if (players attacker)
                            (pick-first-enemy world goblins)
                            (pick-random-target world players))
@@ -101,9 +103,9 @@
                           world)
 
                   base-roll (case (advantage world attacker target)
-                              :advantage (max ((-> world attacker :hit)) ((-> world attacker :hit)))
-                              :disadvantage (min ((-> world attacker :hit)) ((-> world attacker :hit)))
-                              :neither ((-> world attacker :hit)))
+                              :advantage (max ((roll 20 (:hit attack-map))) ((roll 20 (:hit attack-map))))
+                              :disadvantage (min ((roll 20 (:hit attack-map))) ((roll 20 (:hit attack-map))))
+                              :neither ((roll 20 (:hit attack-map))))
 
                   world (if interposing
                           (update-in world [attacker :attack-disadvantage] (constantly false))
@@ -126,7 +128,7 @@
                                   (+ ac 5)])
                                [world ac])]
               (if (>= attack-roll ac)
-                (let [damage ((-> world attacker :damage))]
+                (let [damage ((roll attack-map))]
                   (log attacker " hits " target " for " damage
                        (if (< (- attack-roll bless) ac) " #blessed" ""))
                   (update-in world [target :hp] do-damage damage))
@@ -134,7 +136,7 @@
                   (log attacker " misses " target)
                   world))))
           world
-          (range (or (-> world attacker :attacks) 1))))
+          (-> world attacker :attacks)))
 
 (defn full-caster-spell-slots
   [level]

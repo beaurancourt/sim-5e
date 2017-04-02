@@ -10,15 +10,14 @@
   (let [max-hp (+ 10 (* (- level 1) 7))
         proficiency (proficiency level)
         attack-mod (+ 3 proficiency)
-        casting-mod (+ (main-stat level) proficiency)]
-    {:cleric (merge {:damage (roll 8 3)
-                     :pc true
+        casting-mod (+ (main-stat level) proficiency)
+        melee-attack {:num 1 :sides 8 :mod 3 :hit attack-mod}]
+    {:cleric (merge {:pc true
                      :ac 18
                      :init ((roll 20 0))
-                     :hit (roll 20 attack-mod)
                      :casting-mod casting-mod
                      :spell-dc (+ 8 casting-mod)
-                     :attacks 1
+                     :attacks [melee-attack melee-attack]
                      :reaction true
                      :attack-advantage false
                      :attack-disadvantage false
