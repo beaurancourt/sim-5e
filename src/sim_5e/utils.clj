@@ -85,9 +85,9 @@
 (defn attack
   [world attacker players goblins]
   (reduce (fn [world attack-map]
-            (let [target (if (players attacker)
+            (let [target (if (-> world attacker :pc)
                            (pick-first-enemy world goblins)
-                           (pick-random-target world players))
+                           (pick-random-target world (filter #(-> world % :pc) (keys world))))
 
                   bless (if (-> world attacker :bless)
                           ((roll 4 0))
