@@ -65,10 +65,21 @@
     (> (-> world actor :spell-3) 0)
     (-> world actor :concentrating not)))
 
+(defn- magic-missile-2?
+  [world actor]
+  (> (-> world actor :spell-2) 0))
+
+(defn- magic-missile-1?
+  [world actor]
+  (> (-> world actor :spell-1) 0))
+
 (defmethod take-turn class-key
   [world actor players enemies]
   (cond
     (<= (-> world actor :hp) 0) world
+    true (attack world actor players enemies)
+    (magic-missile-2? world actor) (spells/magic-missile world actor :spell-2 (pick-first-enemy world enemies))
+    (magic-missile-1? world actor) (spells/magic-missile world actor :spell-1 (pick-first-enemy world enemies))
     (fireball? world actor players enemies) (spells/fireball world actor :spell-3 enemies)
     (conjure-animals? world actor) (spells/conjure-animals world actor :spell-3)
     (slow? world actor players enemies) (spells/slow world actor :spell-3 enemies)
