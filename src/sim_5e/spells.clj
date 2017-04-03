@@ -125,3 +125,12 @@
       (update-in [actor spell-level] - 1)
       (update-in [actor :concentrating] (constantly true))
       (update-in [target :ac] + 2)))
+
+(defn magic-missile
+  [world actor spell-level target]
+  (let [number-of-missiles (+ 2 (spell-level-to-num spell-level))
+        missile-damage ((roll number-of-missiles 4 number-of-missiles))]
+    (log actor " hits " target " with a magic missile for " missile-damage)
+    (-> world
+        (update-in [actor spell-level] - 1)
+        (update-in [target :hp] do-damage missile-damage))))
