@@ -89,7 +89,8 @@
 (defn -main
   []
   (spit "log.txt" "")
-  (println 2 (simulate 2))
   (println 3 (simulate 3))
   (println 4 (simulate 4))
-  (println 5 (simulate 5)))
+  (println 5 (simulate 5))
+  (println 6 (simulate 6))
+  )
