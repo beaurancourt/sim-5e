@@ -111,10 +111,12 @@
                                 (update-in [interposing :reaction] (constantly false))))
                           world)
 
-                  base-roll (case (advantage world attacker target)
-                              :advantage (max ((roll 20 (:hit attack-map))) ((roll 20 (:hit attack-map))))
-                              :disadvantage (min ((roll 20 (:hit attack-map))) ((roll 20 (:hit attack-map))))
-                              :neither ((roll 20 (:hit attack-map))))
+                  natural-roll (case (advantage world attacker target)
+                                 :advantage (max ((roll 20 0)) ((roll 20 0)))
+                                 :disadvantage (min ((roll 20 0)) ((roll 20 0)))
+                                 :neither ((roll 20 0)))
+
+                  base-roll (+ natural-roll (:hit attack-map))
 
                   world (if interposing
                           (update-in world [attacker :attack-disadvantage] (constantly false))
@@ -136,14 +138,21 @@
                                       (update-in [:sorcerer :spell-1] - 1))
                                   (+ ac 5)])
                                [world ac])]
-              (if (>= attack-roll ac)
+              (cond
+                (= natural-roll 20)
+                (let [damage ((roll (update-in attack-map [:num] * 2)))]
+                  (log attacker " crits " target " for " damage)
+                  (update-in world [target :hp] do-damage damage))
+
+                (>= attack-roll ac)
                 (let [damage ((roll attack-map))]
                   (log attacker " hits " target " for " damage
                        (if (< (- attack-roll bless) ac) " #blessed" ""))
                   (update-in world [target :hp] do-damage damage))
-                (do
-                  (log attacker " misses " target)
-                  world))))
+
+                :else
+                (do (log attacker " misses " target)
+                    world))))
           world
           (-> world attacker :attacks)))
 
