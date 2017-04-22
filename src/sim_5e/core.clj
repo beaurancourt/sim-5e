@@ -5,33 +5,18 @@
     [sim-5e.fighter :as fighter]
     [sim-5e.sorcerer :as sorcerer]
     [sim-5e.spells :as spells]
-    [sim-5e.enemy]
+    [sim-5e.enemy :as enemy]
     [sim-5e.utils :refer :all]))
 
 (defn- generate-world
   [goblins player-level]
-  (let [base-world (reduce #(merge %1 (generate-pc player-level %2))
-                           {}
-                           [:paladin :cleric :fighter :sorcerer])
+  (let [base-world (into {}
+                         (map #(generate-pc player-level %)
+                              [:paladin :cleric :fighter :sorcerer]))
         goblin-init ((roll 20 9))]
-    (reduce (fn [world index]
-              (merge world
-                     {(keyword (str "orog" index))
-                      {:pc false
-                       :ac 18
-                       :init goblin-init
-                       :reaction true
-                       :attack-advantage false
-                       :attack-disadvantage false
-                       :defense-advantage false
-                       :defense-disadvantage false
-                       :dex-save 1
-                       :wis-save 0
-                       :attacks [{:num 1 :sides 12 :mod 4 :hit 6}
-                                 {:num 1 :sides 12 :mod 4 :hit 6}]
-                       :hp ((roll 5 8 20))}}))
-            base-world
-            (range goblins))))
+    (into base-world
+          (map #(enemy/template goblin-init (keyword (str "orog" %)))
+               (range goblins)))))
 
 (defn- end-of-round-cleanup
   [world]
