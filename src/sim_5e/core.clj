@@ -9,10 +9,10 @@
     [sim-5e.utils :refer :all]))
 
 (defn- generate-world
-  [goblins player-level]
+  [goblins player-level player-list]
   (let [base-world (into {}
                          (map #(generate-pc player-level %)
-                              [:paladin :cleric :fighter :sorcerer]))
+                              player-list))
         goblin-init ((roll 20 9))]
     (into base-world
           (map #(enemy/template goblin-init (keyword (str "orog" %)))
@@ -61,7 +61,7 @@
   (loop [total 0
          rounds 0]
     (log "simulation# " rounds)
-    (let [world (generate-world goblin-count 5)
+    (let [world (generate-world goblin-count 5 [:paladin :cleric :fighter :sorcerer])
           [player-list goblins] ((juxt filter remove) #(-> world % :pc) (keys world))
           players (set player-list)
           world (pre-combat-actions world players)
