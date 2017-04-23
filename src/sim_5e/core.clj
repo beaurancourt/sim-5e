@@ -66,20 +66,33 @@
                (seq (alive world goblins)))
         (recur (simulate-round world players goblins init-order round) (inc round))
         world))))
+
 (defn- strip-enemies
   [world players]
   (select-keys world players))
+
+(defn- short-rest
+  [world players]
+  (reduce (fn [world player]
+            (take-short-rest world player))
+          world
+          players))
 
 (defn- simulate-adventuring-day
   [players enemy-count]
   (loop [world (generate-player-world 5 players)
          encounter-number 0]
-    (if (< encounter-number 1)
+    (if (< encounter-number 6)
       (let [world (-> world
                       (strip-enemies players)
                       (add-enemies-to-world enemy-count))
-            enemies (remove #(-> world % :pc) (keys world))]
-        (recur (simulate-fight world players enemies) (inc encounter-number)))
+            enemies (remove #(-> world % :pc) (keys world))
+            _ (log "encounter# " encounter-number)
+            post-fight-world (simulate-fight world players enemies)
+            post-rest-world (if (#{2 4} encounter-number)
+                              (short-rest post-fight-world players)
+                              post-fight-world)]
+        (recur post-rest-world (inc encounter-number)))
       {:hp (sum (map #(-> world % :hp (max 0))
                      (filter #(-> world % :summoned not) players)))})))
 
@@ -90,15 +103,11 @@
     (log "simulation# " runs)
     (let [players #{:paladin :cleric :fighter :sorcerer}
           resources (simulate-adventuring-day players goblin-count)]
-      (if (< runs 30)
+      (if (< runs 500)
         (recur (+ total (:hp resources)) (inc runs))
         {:hp (float (/ total runs))}))))
 
 (defn -main
   []
   (spit "log.txt" "")
-  (println 3 (simulate 3))
-  (println 4 (simulate 4))
-  (println 5 (simulate 5))
-  (println 6 (simulate 6))
-  )
+  (println 3 (simulate 3)))

@@ -20,6 +20,7 @@
     {:sorcerer (merge {:pc true
                        :ac 15
                        :init ((roll 20 1))
+                       :hit-dice level
                        :casting-mod casting-mod
                        :reaction true
                        :spell-dc (+ 8 casting-mod)
@@ -86,3 +87,18 @@
     (twin-haste? world actor players enemies) (spells/twin-haste world actor :spell-3 [:paladin :fighter])
     (> (-> world actor :spell-1) 0) (spells/burning-hands world actor :spell-1 enemies)
     :else (attack world actor players enemies)))
+
+
+(defmethod take-short-rest class-key
+  [world _]
+  (if (and (> (- (-> world class-key :max-hp)
+                 (-> world class-key :hp))
+              9)
+           (> (-> world class-key :hit-dice) 0))
+    (let [rest-health ((roll 6 2))]
+      (log class-key " rests for " rest-health)
+      (take-short-rest (-> world
+                           (update-in [class-key :hp] + rest-health)
+                           (update-in [class-key :hit-dice] - 1))
+                       class-key))
+    world))

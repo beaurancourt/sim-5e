@@ -22,6 +22,7 @@
     {:fighter {:pc true
                :ac 19
                :init ((roll 20 0))
+               :hit-dice level
                :protection-style false
                :attack-advantage false
                :attack-disadvantage false
@@ -43,3 +44,17 @@
   (cond
     (<= (-> world actor :hp) 0) world
     :else (attack world actor players enemies)))
+
+(defmethod take-short-rest class-key
+  [world _]
+  (if (and (> (- (-> world class-key :max-hp)
+                 (-> world class-key :hp))
+              12)
+           (> (-> world class-key :hit-dice) 0))
+    (let [rest-health ((roll 10 2))]
+      (log class-key " rests for " rest-health)
+      (take-short-rest (-> world
+                           (update-in [class-key :hp] + rest-health)
+                           (update-in [class-key :hit-dice] - 1))
+                      class-key))
+    world))

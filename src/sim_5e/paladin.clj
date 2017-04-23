@@ -13,6 +13,7 @@
         melee-attack {:num 1 :sides 8 :mod (+ main-stat 2) :hit (+ main-stat (proficiency level))}]
     {:paladin (merge {:pc true
                       :ac 18
+                      :hit-dice level
                       :init ((roll 20 0))
                       :attacks (mapv (constantly melee-attack) (range number-of-attacks))
                       :protection-style false
@@ -72,3 +73,16 @@
     ;(smite? world actor) (smite world actor players enemies)
     :else (attack world actor players enemies)))
 
+(defmethod take-short-rest class-key
+  [world _]
+  (if (and (> (- (-> world class-key :max-hp)
+                 (-> world class-key :hp))
+              12)
+           (> (-> world class-key :hit-dice) 0))
+    (let [rest-health ((roll 10 2))]
+      (log class-key " rests for " rest-health)
+      (take-short-rest (-> world
+                           (update-in [class-key :hp] + rest-health)
+                           (update-in [class-key :hit-dice] - 1))
+                       class-key))
+    world))

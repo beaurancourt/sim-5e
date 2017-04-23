@@ -14,6 +14,7 @@
         melee-attack {:num 1 :sides 8 :mod 3 :hit attack-mod}]
     {:cleric (merge {:pc true
                      :ac 18
+                     :hit-dice level
                      :init ((roll 20 0))
                      :casting-mod casting-mod
                      :spell-dc (+ 8 casting-mod)
@@ -52,3 +53,17 @@
     (<= (-> world actor :hp) 0) world
     (cast-cure-wounds? world actor players enemies) (bring-up-friend world actor :spell-1 players)
     :else (attack world actor players enemies)))
+
+(defmethod take-short-rest class-key
+  [world _]
+  (if (and (> (- (-> world class-key :max-hp)
+                 (-> world class-key :hp))
+              10)
+           (> (-> world class-key :hit-dice) 0))
+    (let [rest-health ((roll 8 2))
+          world (-> world
+                    (update-in [class-key :hp] + rest-health)
+                    (update-in [class-key :hit-dice] - 1))]
+      (log class-key " rests for " rest-health)
+      (take-short-rest world class-key))
+    world))

@@ -51,6 +51,9 @@
 (defmulti take-turn
   (fn [_ actor _ _] actor))
 
+(defmulti take-short-rest
+  (fn [_ pc-class] pc-class))
+
 (defn log
   [& s]
   (spit "log.txt" (str (apply str s) "\n") :append true))
