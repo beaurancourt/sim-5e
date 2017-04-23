@@ -18,6 +18,19 @@
           (map #(enemy/template goblin-init (keyword (str "orog" %)))
                (range goblins)))))
 
+(defn- generate-player-world
+  [player-level player-list]
+  (into {}
+        (map #(generate-pc player-level %)
+             player-list)))
+
+(defn- add-enemies-to-world
+  [world enemy-count]
+  (let [enemy-init ((roll 20 2))]
+    (into world
+          (map #(enemy/template enemy-init (keyword (str "orog" %)))
+               (range enemy-count)))))
+
 (defn- end-of-round-cleanup
   [world]
   (reduce (fn [world actor]
@@ -44,9 +57,9 @@
       ))
 
 (defn simulate-fight
-  [world players goblins round]
+  [world players goblins]
   (loop [world world
-         round round]
+         round 0]
     (log "round# " round)
     (let [init-order (sort-by #(-> world % :init (* -1)) (keys world))]
       (if (and (seq (alive world players))
@@ -56,20 +69,24 @@
                (map #(-> world % :hp (max 0))
                     (filter #(-> world % :summoned not) players)))}))))
 
+(defn- simulate-adventuring-day
+  [players enemy-count]
+  (let [world (-> (generate-player-world 5 players)
+                  (add-enemies-to-world enemy-count)
+                  (pre-combat-actions players))
+        enemies (remove #(-> world % :pc) (keys world))]
+    (simulate-fight world players enemies)))
+
 (defn- simulate
   [goblin-count]
   (loop [total 0
-         rounds 0]
-    (log "simulation# " rounds)
-    (let [world (generate-world goblin-count 5 [:paladin :cleric :fighter :sorcerer])
-          [player-list goblins] ((juxt filter remove) #(-> world % :pc) (keys world))
-          players (set player-list)
-          world (pre-combat-actions world players)
-          init-order (sort-by #(-> world % :init (* -1)) (keys world))
-          resources (simulate-fight world players goblins 0)]
-      (if (< rounds 3000)
-        (recur (+ total (:hp resources)) (inc rounds))
-        {:hp (float (/ total rounds))}))))
+         runs 0]
+    (log "simulation# " runs)
+    (let [players #{:paladin :cleric :fighter :sorcerer}
+          resources (simulate-adventuring-day players goblin-count)]
+      (if (< runs 30)
+        (recur (+ total (:hp resources)) (inc runs))
+        {:hp (float (/ total runs))}))))
 
 (defn -main
   []
