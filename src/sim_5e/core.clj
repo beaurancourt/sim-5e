@@ -58,24 +58,30 @@
 
 (defn simulate-fight
   [world players goblins]
-  (loop [world world
+  (loop [world (pre-combat-actions world players)
          round 0]
     (log "round# " round)
     (let [init-order (sort-by #(-> world % :init (* -1)) (keys world))]
       (if (and (seq (alive world players))
                (seq (alive world goblins)))
         (recur (simulate-round world players goblins init-order round) (inc round))
-        {:hp (sum
-               (map #(-> world % :hp (max 0))
-                    (filter #(-> world % :summoned not) players)))}))))
+        world))))
+(defn- strip-enemies
+  [world players]
+  (select-keys world players))
 
 (defn- simulate-adventuring-day
   [players enemy-count]
-  (let [world (-> (generate-player-world 5 players)
-                  (add-enemies-to-world enemy-count)
-                  (pre-combat-actions players))
-        enemies (remove #(-> world % :pc) (keys world))]
-    (simulate-fight world players enemies)))
+  (loop [world (generate-player-world 5 players)
+         encounter-number 0]
+    (if (< encounter-number 1)
+      (let [world (-> world
+                      (strip-enemies players)
+                      (add-enemies-to-world enemy-count))
+            enemies (remove #(-> world % :pc) (keys world))]
+        (recur (simulate-fight world players enemies) (inc encounter-number)))
+      {:hp (sum (map #(-> world % :hp (max 0))
+                     (filter #(-> world % :summoned not) players)))})))
 
 (defn- simulate
   [goblin-count]
