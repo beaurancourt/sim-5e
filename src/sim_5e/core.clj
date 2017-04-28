@@ -60,12 +60,12 @@
   [world players goblins]
   (loop [world (pre-combat-actions world players)
          round 0]
-    (log "round# " round)
-    (let [init-order (sort-by #(-> world % :init (* -1)) (keys world))]
-      (if (and (seq (alive world players))
-               (seq (alive world goblins)))
-        (recur (simulate-round world players goblins init-order round) (inc round))
-        world))))
+    (if (and (seq (alive world players))
+             (seq (alive world goblins)))
+      (let [init-order (sort-by #(-> world % :init (* -1)) (keys world))]
+        (log "round# " round)
+        (recur (simulate-round world players goblins init-order round) (inc round)))
+      world)))
 
 (defn- strip-enemies
   [world players]
@@ -78,11 +78,16 @@
           world
           players))
 
+(defn- remaining-hp
+  [world players]
+  (sum (map #(-> world % :hp (max 0))
+            (filter #(-> world % :summoned not) players))))
+
 (defn- simulate-adventuring-day
   [players enemy-count]
   (loop [world (generate-player-world 5 players)
          encounter-number 0]
-    (if (< encounter-number 6)
+    (if (< encounter-number 1)
       (let [world (-> world
                       (strip-enemies players)
                       (add-enemies-to-world enemy-count))
@@ -92,9 +97,9 @@
             post-rest-world (if (#{2 4} encounter-number)
                               (short-rest post-fight-world players)
                               post-fight-world)]
+        (log "remaining hp: " (remaining-hp post-rest-world players))
         (recur post-rest-world (inc encounter-number)))
-      {:hp (sum (map #(-> world % :hp (max 0))
-                     (filter #(-> world % :summoned not) players)))})))
+      {:hp (remaining-hp world players)})))
 
 (defn- simulate
   [goblin-count]
@@ -103,7 +108,7 @@
     (log "simulation# " runs)
     (let [players #{:paladin :cleric :fighter :sorcerer}
           resources (simulate-adventuring-day players goblin-count)]
-      (if (< runs 500)
+      (if (< runs 3000)
         (recur (+ total (:hp resources)) (inc runs))
         {:hp (float (/ total runs))}))))
 
