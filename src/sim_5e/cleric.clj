@@ -54,7 +54,6 @@
     (let [heal-target (first (sort (fn [a b]
                                      (> (missing-hp world a) (missing-hp world b)))
                                    players))]
-      (println heal-target spell-level)
       (use-all-slots-on-healing (spells/cure-wounds world actor spell-level heal-target)
                                 players
                                 actor))
