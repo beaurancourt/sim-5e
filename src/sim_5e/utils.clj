@@ -222,3 +222,7 @@
               (< level 17) 0
               (< level 19) 1
               :else 2)})
+
+(defn missing-hp
+  [world actor]
+  (- (-> world actor :max-hp) (-> world actor :hp)))

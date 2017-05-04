@@ -56,6 +56,11 @@
       ;(spells/bless :cleric :spell-1 [:fighter :paladin :cleric])
       ))
 
+(defn post-combat-actions
+  [world players]
+  (if (players :cleric)
+    (cleric/use-all-slots-on-healing world players :cleric)))
+
 (defn simulate-fight
   [world players goblins]
   (loop [world (pre-combat-actions world players)
@@ -65,7 +70,7 @@
       (let [init-order (sort-by #(-> world % :init (* -1)) (keys world))]
         (log "round# " round)
         (recur (simulate-round world players goblins init-order round) (inc round)))
-      world)))
+      (post-combat-actions world players))))
 
 (defn- strip-enemies
   [world players]
@@ -116,3 +121,4 @@
   []
   (spit "log.txt" "")
   (println 3 (simulate 3)))
+(-main)
