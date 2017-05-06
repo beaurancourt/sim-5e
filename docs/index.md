@@ -7,7 +7,7 @@ An enemy is about to attack you for sure, should you fight defensively, or attac
 In order to answer these questions, we need *an objective function*. We need to define what the *goal* is.
 We need a way to compare options against the objective function, so we can know what the right choice is.
 
-Is the objective function maximizing DPR? [There](http://www.enworld.org/forum/showthread.php?362272-Highest-DPR-Build-Yet) [are](http://www.giantitp.com/forums/showthread.php?522093-5e-Nova-or-DPR-optimization) [plenty](http://www.giantitp.com/forums/showthread.php?522096-Nova-or-DPR-optimization) [of](http://www.giantitp.com/forums/showthread.php?474803-Good-sustained-dpr-builds) [threads](https://docs.google.com/spreadsheets/d/1Bwv7pfPC90BqZVPMu19T075-6cwkphdPJQe1d8gTVbQ/edit) that attempt to maximize dps.
+Is the objective function maximizing DPR? [There](http://www.enworld.org/forum/showthread.php?362272-Highest-DPR-Build-Yet) are [plenty](http://www.giantitp.com/forums/showthread.php?522093-5e-Nova-or-DPR-optimization) of [threads](http://www.giantitp.com/forums/showthread.php?522096-Nova-or-DPR-optimization) that [attempt](http://www.giantitp.com/forums/showthread.php?474803-Good-sustained-dpr-builds) to [maximize](https://docs.google.com/spreadsheets/d/1Bwv7pfPC90BqZVPMu19T075-6cwkphdPJQe1d8gTVbQ/edit) dps.
 There are more [guides](http://rpgbot.net/dnd5/characters/classes/) that offer optimization advice than I can count.
 
 Yet, what are we *truly* trying to optimize for?
