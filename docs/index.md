@@ -37,7 +37,7 @@ There sure is!
 On an individual enounter bases, you want to make the choice that leaves you with the **most remaining resources**.
 
 How does that work? If `choice A` leaves you with more remaining resources than `choice B` after one encounter,
-then `choice A` is better than `choice B`. What are resources? All of the stuff that carries over: spell slots, rages, action surges, etc.
+then `choice A` is better than `choice B`. What are resources? All of the stuff that carries over: hp, spell slots, rages, action surges, rest dice, etc.
 
 The easiest decisions to compare are the ones where all of the resource types stay constant except one!
 This allows us to not worry about comparing resources to *each other* in terms of "living through the day" optimization and focus instead on which option maximizes a *particular* resource.
