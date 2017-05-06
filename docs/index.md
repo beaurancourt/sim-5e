@@ -120,9 +120,7 @@ round# 5
 :fighter hits :orog2 for 13
 :fighter misses :orog0
 :cleric has no remaining spell slots to heal with
-remaining hp: 45
-</code>
-</pre>
+remaining hp: 45</code></pre>
 </details>
 <details>
 <summary>46 hp</summary>
@@ -185,9 +183,7 @@ round# 4
 :paladin crits :orog2 for 19
 :paladin hits :orog2 for 12
 :cleric has no remaining spell slots to heal with
-remaining hp: 46
-</code>
-</pre>
+remaining hp: 46</code></pre>
 </details>
 <details>
 <summary>58 hp</summary>
@@ -252,9 +248,7 @@ round# 5
 :paladin hits :orog0 for 14
 :paladin hits :orog0 for 12
 :cleric has no remaining spell slots to heal with
-remaining hp: 58
-</code>
-</pre>
+remaining hp: 58</code></pre>
 </details>
 <details>
 <summary>71 hp</summary>
@@ -318,9 +312,7 @@ round# 4
 :paladin misses :orog2
 :cleric hits :orog2 for 5
 :cleric has no remaining spell slots to heal with
-remaining hp: 71
-</code>
-</pre>
+remaining hp: 71</code></pre>
 </details>
 <details>
 <summary>76 hp</summary>
@@ -382,9 +374,7 @@ round# 4
 :fighter hits :orog0 for 7
 :cleric casts :spell-2 cure wound and heals :sorcerer from 2 to 11
 :cleric has no remaining spell slots to heal with
-remaining hp: 76
-</code>
-</pre>
+remaining hp: 76</code></pre>
 </details>
 <details>
 <summary>76 hp</summary>
@@ -435,9 +425,7 @@ round# 3
 :fighter hits :orog0 for 7 #blessed
 :fighter hits :orog0 for 11
 :cleric has no remaining spell slots to heal with
-remaining hp: 76
-</code>
-</pre>
+remaining hp: 76</code></pre>
 </details>
 <details>
 <summary>93 hp</summary>
@@ -498,9 +486,7 @@ round# 4
 :sorcerer misses :orog0
 :cleric casts :spell-2 cure wound and heals :paladin from 6 to 18
 :cleric has no remaining spell slots to heal with
-remaining hp: 93
-</code>
-</pre>
+remaining hp: 93</code></pre>
 </details>
 <details>
 <summary>118 hp</summary>
@@ -572,9 +558,7 @@ round# 5
 :sorcerer misses :orog0
 :cleric casts :spell-2 cure wound and heals :paladin from 0 to 19
 :cleric has no remaining spell slots to heal with
-remaining hp: 118
-</code>
-</pre>
+remaining hp: 118</code></pre>
 </details>
 <details>
 <summary>119 hp</summary>
@@ -623,9 +607,7 @@ round# 3
 :paladin hits :orog0 for 7
 :cleric casts :spell-2 cure wound and heals :paladin from 15 to 33
 :cleric has no remaining spell slots to heal with
-remaining hp: 119
-</code>
-</pre>
+remaining hp: 119</code></pre>
 </details>
 <details>
 <summary>120 hp</summary>
@@ -673,9 +655,7 @@ round# 3
 :cleric hits :orog0 for 11
 :cleric casts :spell-2 cure wound and heals :fighter from 25 to 35
 :cleric has no remaining spell slots to heal with
-remaining hp: 120
-</code>
-</pre>
+remaining hp: 120</code></pre>
 </details>
 <details>
 <summary>121 hp</summary>
@@ -741,9 +721,7 @@ the sorcerer uses shield to block :orog2
 :paladin hits :orog2 for 13
 :paladin hits :orog0 for 14
 :cleric has no remaining spell slots to heal with
-remaining hp: 121
-</code>
-</pre>
+remaining hp: 121</code></pre>
 </details>
 
 #### No bless at all. Average across 3000 sims: 105.4 hp
