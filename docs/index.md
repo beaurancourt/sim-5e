@@ -1,4 +1,4 @@
-<b>Why Bless is better than Cure Wounds in combat.</b>
+### Why Bless is better than Cure Wounds in combat.
 
 Any action you take in combat will change the amount of HP you have at the end of combat. The actions that result in the greatest amount of HP at the end of combat are the best actions to take if your goal is have the greatest possible amount of HP at the end of combat.
 
@@ -17,7 +17,7 @@ Casting cure wounds does not reduce enemy HP. Casting cure wounds in combat does
 When you or your allies are affected by bless and you take the attack action, bless is helping to accomplish your goal. It probabilistically increases the damage you or your allies cause by taking the attack action. In fact, the average increase in damage caused by you or your allies when affected by bless is greater than the damage caused by an taking the attack action.
 Therefore, you want to cast bless in combat, take the attack action until your enemy's HP is reduced to 0.
 
-<b>The conclusion is incorrect because the axioms do not accurately model the game.</b>
+### The conclusion is incorrect because the axioms do not accurately model the game.
 
 Beginning 5e, my groups' clerics often deliberated whether to use bless or guiding bolt, and we didn't consider using cure wounds because it didn't make enemies die faster. Guiding bolt deals 4d6 (UP TO 24), which seems like a lot. But being the clever players we were, we thought about how great a percentage increase in damage from bless we could inflict over multiple rounds. We decided to go with bless, and count all the damage we did with attacks that only hit because of bless. Without getting too specific, the sum was usually over 20, so we decided that it was a good spell.
 
@@ -27,11 +27,11 @@ Consider the following: A level 2 party is fighting a lizardfolk. Do you attack 
 
 Then, consider how that changes versus 2 lizardfolk, 3 lizardfolk, 4, 5, etc. How much damage is the attack preventing? How much damage is the bless preventing? Keep your guesses in mind.
 
-<b>How does bless actually prevent damage?</b>
+### How does bless actually prevent damage?
 
 Bless prevents damage when attacks that only hit because of bless cause an enemy to die before they would have hit with an attack action, or multiple attack actions over multiple turns, had been alive. 
 
-<b>How do we count the damage prevented by bless?</b>
+### How do we count the damage prevented by bless?
 
 The most accurate way to count the damage prevented by bless goes about like this: you bless, and then the first time it hits you record the state of the game. Then you run x simulations from that point as though it hit and y simulation as though it didn't and you say "this particular blessed hit saved z damage on average."
 
@@ -41,7 +41,7 @@ We use a script that simulates combat between a party of characters and an encou
 
 In most of our simulations, the party of characters comprises a Cleric, a Fighter, a Paladin and a Sorcerer. We run the script once with the party's default HP, AC and attacks, then we run the script once with the Cleric casting Bless before combat, targeting the Cleric, the Fighter and the Paladin. Additionally, it is not possible for the Cleric to stop concentrating on Bless (We'll explain this later). We expect that the average total HP of the party will be higher when the Cleric casts Bless.
 
-<b>Simulation and Results</b>
+### Simulation and Results
 
 In these two simulations, the party is level 2 and the encounters are 2 (easy), 3 (hard) or 4 (deadly) Lizardfolk. The Cleric has 16 Strength, 14 Constitution, 18 AC (Chainmail, Shield), and attacks with +5 to hit for 1d8+3 damage. The Fighter has 16 Strength, 16 Constitution, 18 AC (Chainmail, Shield), and attacks with +5 to hit for 1d8+5 damage (Dueling). The Paladin has 16 Strength, 16 Constitution, 18 AC (Chainmail, Shield), and attacks with +5 to hit for 1d8+5 damage (Dueling). The Sorcerer has 16 Charisma, 12 Constitution, 15 AC (Dragonic Resilience, Dexterity), and attacks with +5 to hit for 1d10 damage. The Lizardfolk each have 15 AC and two attacks with +4 to hit for 1d6+2. In other words they're bog standard.
 
@@ -54,7 +54,7 @@ The average of the total HP when the Cleric casts bless is 58.32 versus 2 Lizard
 
 We feel justified in saying that in these combat examples that bless prevented 3.22 during the average encounter with 2 Lizardfolk , 6.41 during the average encounter with 3 Lizardfolk, and 6.28 damage during the average encounter with 4 Lizardfolk. In this encounter, the Cleric has cast Bless without using an action and maintains concentration regardless of the damage the Cleric takes while the Lizardfolk attack party members randomly. In this case, the best possible case for bless, Bless comes out slightly behind Cure Wounds. 
 
-First round bless. Average across 3000 sims: 98.9hp:
+#### First round bless. Average across 3000 sims: 98.9hp:
 <details>
 <summary>48 hp</summary>
 
@@ -696,8 +696,7 @@ remaining hp: 135
 ```
 </details>
 
-
-No bless at all. Average across 3000 sims: 105.4 hp.
+#### No bless at all. Average across 3000 sims: 105.4 hp.
 <details>
 <summary>11 hp</summary>
 
@@ -1419,7 +1418,7 @@ remaining hp: 154
 ```
 </details>
 
-Blessing before combat. Average across 3000 sims: 107.3
+#### Blessing before combat. Average across 3000 sims: 107.3
 <details>
 <summary>89 hp</summary>
 
@@ -2005,22 +2004,22 @@ remaining hp: 143
 ```
 </details>
 
-<b>Why Cure Wounds is the best Cleric spell</b>
+### Why Cure Wounds is the best Cleric spell
 
 The average result of 1d8 is 4.5. When a Cleric casts Cure Wounds, the Cleric adds their Wisdom modifier to the result of a d8. The expected value of casting Cure Wounds is 4.5 + WIS. If your level 1 Cleric has 16 Wisdom, you probably expect to heal 7 or 8 HP when you cast Cure Wounds. How much damage did Bless prevent?
 
-<b>Using spell slots during a simulated adventuring day</b>
+### Using spell slots during a simulated adventuring day
 
 Using spells like haste and burning hands conditionally.
 
-<b>Which spells are good?</b>
+### Which spells are good?
 
 Burning Hands, Fireball, Prayer of Healing etc.
 
-<b>Which class features are the best?</b>
+### Which class features are the best?
 
 Which class features preserve the most resources over a simulated adventuring day? Remarks on defensive vs dueling style. Using rages. Action surge and Second wind.
 
-<b>The number 1 class?</b>
+### The number 1 class?
 
 Which class's presence preserves the most resources over a simulated adventuring day?
