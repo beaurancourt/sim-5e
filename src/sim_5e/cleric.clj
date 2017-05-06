@@ -65,6 +65,7 @@
   [world actor players enemies]
   (cond
     (<= (-> world actor :hp) 0) world
+    ;(cast-bless? world actor players enemies) (spells/bless world :cleric :spell-1 [:fighter :paladin :cleric])
     (cast-cure-wounds? world actor players enemies) (bring-up-friend world actor (lowest-spell-slot world actor) players)
     :else (attack world actor players enemies)))
 
