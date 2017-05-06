@@ -724,704 +724,714 @@ the sorcerer uses shield to block :orog2
 remaining hp: 121</code></pre>
 </details>
 
-#### No bless at all. Average across 3000 sims: 105.4 hp
-<details>
-<summary>11 hp</summary>
-
-<pre><code>simulation# 10
-encounter# 0
-round# 0
-:fighter misses :orog0
-:fighter misses :orog0
-:fighter misses :orog0
-:cleric hits :orog0 for 10
-:cleric misses :orog0
-:sorcerer hits :orog0 for 4
-:orog0 hits :cleric for 16
-:orog0 hits :fighter for 6
-:orog1 hits :cleric for 9
-:orog1 hits :cleric for 15
-:orog2 hits :fighter for 13
-:orog2 hits :sorcerer for 5
-:paladin hits :orog0 for 9
-:paladin hits :orog0 for 13
-round# 1
-:fighter misses :orog0
-:fighter hits :orog0 for 8
-:fighter misses :orog0
-:sorcerer misses :orog0
-:orog0 misses :sorcerer
-:orog0 misses :paladin
-:orog1 hits :paladin for 14
-:orog1 hits :paladin for 8
-:orog2 misses :sorcerer
-:orog2 crits :sorcerer for 17
-:paladin misses :orog0
-:paladin misses :orog0
-round# 2
-:fighter misses :orog0
-:fighter misses :orog0
-:fighter misses :orog0
-:sorcerer misses :orog0
-:orog0 misses :fighter
-:orog0 misses :sorcerer
-:orog1 hits :fighter for 12
-:orog1 hits :paladin for 6
-:orog2 hits :fighter for 15
-:orog2 misses :paladin
-:paladin misses :orog0
-:paladin hits :orog0 for 9
-round# 3
-:sorcerer misses :orog1
-the sorcerer uses shield to block :orog1
-:orog1 misses :sorcerer
-:orog1 hits :paladin for 9
-:orog2 misses :paladin
-:orog2 hits :paladin for 14
-round# 4
-:sorcerer misses :orog1
-:orog1 hits :sorcerer for 15
-the sorcerer uses shield to block :orog1
-:orog1 misses :sorcerer
-:orog2 misses :sorcerer
-:orog2 misses :sorcerer
-round# 5
-:sorcerer hits :orog1 for 12
-:orog1 hits :sorcerer for 12
-:orog1 hits :paladin for 5
-:orog2 hits :paladin for 9
-:orog2 misses :paladin
-:cleric casts cure wound and heals :fighter to 11
-:cleric has no remaining spell slots to heal with
-remaining hp: 11</code></pre>
-</details>
-
+#### No bless at all. Average across 3000 sims: 99.2 hp
 <details>
 <summary>52 hp</summary>
-
 <pre><code>simulation# 8
 encounter# 0
 round# 0
 :sorcerer misses :orog0
-:fighter misses :orog0
-:fighter misses :orog0
-:fighter misses :orog0
-:paladin hits :orog0 for 8
+:paladin hits :orog0 for 11
 :paladin misses :orog0
-:orog0 misses :paladin
-:orog0 hits :fighter for 10
-:orog1 misses :sorcerer
-:orog1 hits :paladin for 14
-:orog2 hits :cleric for 13
-:orog2 misses :sorcerer
-:cleric misses :orog0
-:cleric misses :orog0
+:orog0 hits :sorcerer for 10
+:orog0 crits :paladin for 6
+:orog1 hits :cleric for 15
+:orog1 misses :fighter
+:orog2 hits :fighter for 11
+:orog2 hits :cleric for 6
+:fighter misses :orog0
+:fighter misses :orog0
+:cleric hits :orog0 for 9
 round# 1
 :sorcerer misses :orog0
-:fighter misses :orog0
-:fighter misses :orog0
-:fighter hits :orog0 for 7
-:paladin hits :orog0 for 8
 :paladin misses :orog0
-:orog0 hits :cleric for 15
-:orog0 crits :fighter for 16
-:orog1 hits :fighter for 16
-:orog1 hits :sorcerer for 16
-:orog2 misses :sorcerer
-:orog2 misses :paladin
-:cleric misses :orog0
-:cleric hits :orog0 for 11
-round# 2
-:sorcerer hits :orog0 for 10
-:fighter hits :orog0 for 12
-:fighter hits :orog1 for 9
-:fighter misses :orog1
-:paladin misses :orog1
-:paladin hits :orog1 for 7
-:orog1 misses :sorcerer
+:paladin hits :orog0 for 13
+:orog0 misses :fighter
+:orog0 hits :paladin for 11
+:orog1 misses :fighter
 :orog1 misses :cleric
-the sorcerer uses shield to block :orog2
+:orog2 misses :paladin
+:orog2 misses :fighter
+:fighter hits :orog0 for 10
+:fighter hits :orog0 for 8
+:cleric hits :orog1 for 7
+round# 2
+:sorcerer misses :orog1
+:paladin misses :orog1
+:paladin hits :orog1 for 9
+:orog1 crits :paladin for 12
+:orog1 hits :fighter for 12
+:orog2 hits :cleric for 10
 :orog2 misses :sorcerer
-:orog2 hits :sorcerer for 11
+:fighter misses :orog1
+:fighter misses :orog1
 :cleric misses :orog1
-:cleric hits :orog1 for 8
 round# 3
 :sorcerer misses :orog1
-:fighter hits :orog1 for 8
-:fighter misses :orog1
-:fighter misses :orog1
-:paladin hits :orog1 for 8
 :paladin misses :orog1
-:orog1 misses :sorcerer
-:orog1 misses :cleric
+:paladin misses :orog1
+:orog1 hits :paladin for 11
+:orog1 hits :paladin for 5
+:orog2 misses :fighter
 :orog2 misses :cleric
-:orog2 misses :cleric
-:cleric misses :orog1
-:cleric hits :orog1 for 5
+:fighter crits :orog1 for 15
+:fighter misses :orog1
+:cleric casts :spell-1 cure wound and heals :paladin from 0 to 10
 round# 4
-:sorcerer misses :orog2
+:sorcerer hits :orog1 for 12
+:paladin hits :orog1 for 14
+:paladin misses :orog2
+:orog2 hits :sorcerer for 10
+:orog2 hits :cleric for 15
 :fighter misses :orog2
 :fighter misses :orog2
-:fighter hits :orog2 for 10
-:paladin hits :orog2 for 7
-:paladin hits :orog2 for 9
-:orog2 misses :cleric
-:orog2 hits :sorcerer for 7
-:cleric misses :orog2
-:cleric misses :orog2
 round# 5
 :sorcerer misses :orog2
-:fighter misses :orog2
-:fighter misses :orog2
-:fighter misses :orog2
+:paladin hits :orog2 for 12
 :paladin hits :orog2 for 8
-:paladin misses :orog2
 :orog2 misses :fighter
-:orog2 hits :sorcerer for 16
-:cleric casts cure wound and heals :sorcerer to 10
+:orog2 crits :sorcerer for 10
+:fighter hits :orog2 for 13
+:fighter hits :orog2 for 11
 round# 6
-:sorcerer hits :orog2 for 4
-:fighter misses :orog2
-:fighter hits :orog2 for 10
-:fighter hits :orog0 for 7
+:sorcerer hits :orog2 for 3
+:paladin hits :orog2 for 7
 :paladin misses :orog0
-:paladin misses :orog0
-:cleric hits :orog0 for 11
-:cleric misses :orog0
+:fighter misses :orog0
+:fighter hits :orog0 for 10
+:cleric casts :spell-2 cure wound and heals :cleric from 0 to 13
 :cleric has no remaining spell slots to heal with
 remaining hp: 52</code></pre>
 </details>
-
 <details>
-<summary>68 hp</summary>
-
-<pre><code>simulation# 7
-encounter# 0
-round# 0
-:fighter misses :orog0
-:fighter misses :orog0
-:fighter misses :orog0
-:cleric hits :orog0 for 6
-:cleric misses :orog0
-:paladin misses :orog0
-:paladin hits :orog0 for 11
-:sorcerer misses :orog0
-:orog0 hits :cleric for 8
-:orog0 crits :paladin for 16
-:orog1 crits :fighter for 27
-:orog1 hits :sorcerer for 7
-:orog2 misses :sorcerer
-:orog2 hits :fighter for 14
-round# 1
-:fighter hits :orog0 for 9
-:fighter hits :orog0 for 9
-:fighter hits :orog0 for 7
-:cleric misses :orog0
-:cleric hits :orog0 for 7
-:paladin misses :orog1
-:paladin hits :orog1 for 14
-:sorcerer hits :orog1 for 10
-:orog1 misses :fighter
-:orog1 hits :fighter for 16
-:orog2 misses :sorcerer
-:orog2 misses :sorcerer
-round# 2
-:cleric casts cure wound and heals :fighter to 15
-:paladin misses :orog1
-:paladin misses :orog1
-:sorcerer misses :orog1
-:orog1 misses :fighter
-:orog1 misses :paladin
-:orog2 hits :fighter for 10
-:orog2 hits :paladin for 5
-round# 3
-:fighter misses :orog1
-:fighter misses :orog1
-:fighter hits :orog1 for 10
-:cleric misses :orog1
-:cleric hits :orog1 for 9
-:paladin misses :orog1
-:paladin hits :orog1 for 10
-:sorcerer hits :orog2 for 3
-:orog2 hits :fighter for 9
-:orog2 crits :cleric for 16
-round# 4
-:cleric misses :orog2
-:cleric hits :orog2 for 11
-:paladin misses :orog2
-:paladin misses :orog2
-:sorcerer hits :orog2 for 3
-:orog2 misses :cleric
-:orog2 misses :paladin
-round# 5
-:cleric hits :orog2 for 6
-:cleric misses :orog2
-:paladin misses :orog2
-:paladin hits :orog2 for 10
-:sorcerer hits :orog2 for 11
-:cleric has no remaining spell slots to heal with
-remaining hp: 68</code></pre>
-</details>
-
-<details>
-<summary>96 hp</summary>
-
-<pre><code>simulation# 9
-encounter# 0
-round# 0
-:fighter crits :orog0 for 15
-:fighter misses :orog0
-:fighter misses :orog0
-:orog0 hits :cleric for 7
-:orog0 hits :cleric for 12
-:orog1 misses :fighter
-:orog1 misses :paladin
-:orog2 crits :cleric for 18
-:orog2 hits :cleric for 15
-:paladin hits :orog0 for 7
-:paladin hits :orog0 for 12
-:sorcerer misses :orog0
-round# 1
-:fighter hits :orog0 for 11
-:fighter misses :orog0
-:fighter hits :orog0 for 8
-:orog1 misses :sorcerer
-:orog1 hits :fighter for 16
-the sorcerer uses shield to block :orog2
-:orog2 misses :sorcerer
-:orog2 misses :paladin
-:paladin hits :orog1 for 7
-:paladin misses :orog1
-:sorcerer hits :orog1 for 14
-round# 2
-:fighter hits :orog1 for 11
-:fighter misses :orog1
-:fighter hits :orog1 for 10
-:orog1 misses :paladin
-:orog1 misses :sorcerer
-:orog2 misses :paladin
-:orog2 crits :paladin for 14
-:paladin misses :orog1
-:paladin hits :orog1 for 11
-:sorcerer crits :orog2 for 18
-round# 3
-:fighter crits :orog2 for 10
-:fighter misses :orog2
-:fighter misses :orog2
-:orog2 misses :sorcerer
-:orog2 hits :fighter for 9
-:paladin hits :orog2 for 12
-:paladin hits :orog0 for 13
-:sorcerer hits :orog0 for 13
-:cleric casts cure wound and heals :cleric to 9
-:cleric has no remaining spell slots to heal with
-remaining hp: 96</code></pre>
-</details>
-
-<details>
-<summary>99 hp</summary>
-
-<pre><code>simulation# 0
-encounter# 0
-round# 0
-:cleric hits :orog0 for 7
-:cleric misses :orog0
-:sorcerer crits :orog0 for 15
-:orog0 hits :cleric for 10
-:orog0 hits :fighter for 11
-:orog1 misses :cleric
-:orog1 hits :cleric for 12
-:orog2 hits :cleric for 7
-:orog2 hits :fighter for 12
-:paladin hits :orog0 for 7
-:paladin misses :orog0
-:fighter hits :orog0 for 9
-:fighter hits :orog1 for 11
-:fighter misses :orog1
-round# 1
-:cleric hits :orog1 for 5
-:cleric misses :orog1
-:sorcerer misses :orog1
-:orog1 misses :fighter
-:orog1 misses :fighter
-:orog2 hits :sorcerer for 11
-:orog2 misses :paladin
-:paladin hits :orog1 for 9
-:paladin hits :orog1 for 9
-:fighter hits :orog1 for 12
-:fighter hits :orog2 for 12
-:fighter hits :orog2 for 9
-round# 2
-:cleric misses :orog2
-:cleric hits :orog2 for 4
-:sorcerer misses :orog2
-:orog2 hits :fighter for 10
-:orog2 hits :paladin for 5
-:paladin misses :orog2
-:paladin hits :orog2 for 12
-:fighter misses :orog2
-:fighter misses :orog2
-:fighter misses :orog2
-round# 3
-:cleric hits :orog2 for 9
-:cleric misses :orog0
-:sorcerer hits :orog0 for 13
-:paladin hits :orog0 for 11
-:paladin hits :orog0 for 11
-:fighter hits :orog0 for 11
-:fighter misses :orog0
-:fighter misses :orog0
-:cleric casts cure wound and heals :fighter to 24
-:cleric has no remaining spell slots to heal with
-remaining hp: 99</code></pre>
-</details>
-
-<details>
-<summary>110 hp</summary>
-<pre><code>simulation# 4
-encounter# 0
-round# 0
-:fighter misses :orog0
-:fighter hits :orog0 for 12
-:fighter hits :orog0 for 7
-:orog0 misses :fighter
-:orog0 misses :cleric
-:orog1 hits :sorcerer for 12
-:orog1 misses :fighter
-:orog2 crits :fighter for 15
-:orog2 hits :fighter for 9
-:paladin crits :orog0 for 13
-:paladin misses :orog0
-:sorcerer hits :orog0 for 11
-:cleric hits :orog1 for 7
-:cleric hits :orog1 for 8
-round# 1
-:fighter hits :orog1 for 12
-:fighter misses :orog1
-:fighter misses :orog1
-:orog1 misses :sorcerer
-:orog1 hits :fighter for 14
-:orog2 misses :cleric
-:orog2 hits :cleric for 15
-:paladin misses :orog1
-:paladin hits :orog1 for 13
-:sorcerer hits :orog1 for 16
-:cleric hits :orog2 for 6
-:cleric misses :orog2
-round# 2
-:fighter hits :orog2 for 7
-:fighter crits :orog2 for 16
-:fighter crits :orog2 for 11
-:paladin misses :orog0
-:paladin hits :orog0 for 9
-:sorcerer hits :orog0 for 15
-:cleric misses :orog0
-:cleric hits :orog0 for 11
-:cleric casts cure wound and heals :fighter to 17
-:cleric has no remaining spell slots to heal with
-remaining hp: 110</code></pre>
-</details>
-
-<details>
-<summary>112 hp</summary>
-
-<pre><code>simulation# 2
-encounter# 0
-round# 0
-:fighter misses :orog0
-:fighter misses :orog0
-:fighter misses :orog0
-:sorcerer misses :orog0
-:cleric misses :orog0
-:cleric misses :orog0
-:paladin misses :orog0
-:paladin hits :orog0 for 10
-:orog0 misses :cleric
-:orog0 misses :paladin
-:orog1 misses :paladin
-:orog1 misses :fighter
-:orog2 crits :sorcerer for 20
-:orog2 misses :cleric
-round# 1
-:fighter hits :orog0 for 9
-:fighter misses :orog0
-:fighter misses :orog0
-:sorcerer hits :orog0 for 6
-:cleric hits :orog0 for 9
-:cleric hits :orog0 for 11
-:paladin crits :orog1 for 19
-:paladin misses :orog1
-:orog1 misses :sorcerer
-:orog1 hits :cleric for 15
-:orog2 hits :sorcerer for 6
-:orog2 hits :sorcerer for 9
-round# 2
-:fighter misses :orog1
-:fighter misses :orog1
-:fighter misses :orog1
-:sorcerer misses :orog1
-:cleric misses :orog1
-:cleric hits :orog1 for 11
-:paladin misses :orog1
-:paladin hits :orog1 for 9
-:orog2 misses :paladin
-:orog2 hits :paladin for 16
-round# 3
-:fighter hits :orog2 for 9
-:fighter hits :orog2 for 8
-:fighter misses :orog2
-:sorcerer misses :orog2
-:cleric misses :orog2
-:cleric hits :orog2 for 4
-:paladin crits :orog2 for 20
-:paladin misses :orog2
-:orog2 misses :fighter
-:orog2 misses :sorcerer
-round# 4
-:fighter hits :orog2 for 11
-:fighter misses :orog0
-:fighter misses :orog0
-:sorcerer misses :orog0
-:cleric misses :orog0
-:cleric misses :orog0
-:paladin misses :orog0
-:paladin hits :orog0 for 8
-:cleric casts cure wound and heals :sorcerer to 17
-:cleric has no remaining spell slots to heal with
-remaining hp: 112</code></pre>
-</details>
-
-<details>
-<summary>116 hp</summary>
-
-<pre><code>simulation# 6
-encounter# 0
-round# 0
-:paladin misses :orog0
-:paladin hits :orog0 for 9
-:fighter misses :orog0
-:fighter hits :orog0 for 10
-:fighter misses :orog0
-:cleric hits :orog0 for 7
-:cleric misses :orog0
-:orog0 hits :cleric for 10
-:orog0 misses :fighter
-:orog1 misses :fighter
-:orog1 hits :sorcerer for 9
-:orog2 misses :paladin
-:orog2 misses :fighter
-:sorcerer misses :orog0
-round# 1
-:paladin hits :orog0 for 9
-:paladin misses :orog0
-:fighter hits :orog0 for 11
-:fighter crits :orog1 for 12
-:fighter hits :orog1 for 10
-:cleric hits :orog1 for 11
-:cleric misses :orog1
-:orog1 misses :sorcerer
-:orog1 hits :cleric for 14
-:orog2 misses :cleric
-:orog2 hits :paladin for 11
-:sorcerer misses :orog1
-round# 2
-:paladin misses :orog1
-:paladin hits :orog1 for 7
-:fighter misses :orog1
-:fighter hits :orog1 for 12
-:fighter misses :orog2
-:cleric hits :orog2 for 4
-:cleric hits :orog2 for 10
-the sorcerer uses shield to block :orog2
-:orog2 misses :sorcerer
-:orog2 hits :sorcerer for 16
-:sorcerer misses :orog2
-round# 3
-:paladin hits :orog2 for 12
-:paladin misses :orog2
-:fighter misses :orog2
-:fighter misses :orog2
-:fighter misses :orog2
-:cleric misses :orog2
-:cleric hits :orog2 for 11
-:sorcerer hits :orog0 for 7
-:cleric casts cure wound and heals :sorcerer to 25
-:cleric has no remaining spell slots to heal with
-remaining hp: 116</code></pre>
-</details>
-
-<details>
-<summary>129 hp</summary>
-
+<summary>62 hp</summary>
 <pre><code>simulation# 5
 encounter# 0
 round# 0
-:orog0 misses :paladin
-:orog0 misses :paladin
+:orog0 hits :fighter for 15
+:orog0 misses :cleric
 :orog1 misses :sorcerer
-the sorcerer uses shield to block :orog1
-:orog1 misses :sorcerer
-:orog2 hits :paladin for 6
+:orog1 crits :cleric for 17
 :orog2 misses :paladin
-:cleric misses :orog0
-:cleric misses :orog0
-:paladin hits :orog0 for 10
-:paladin misses :orog0
-:sorcerer misses :orog0
+:orog2 misses :paladin
 :fighter misses :orog0
-:fighter crits :orog0 for 13
-:fighter hits :orog0 for 7
+:fighter misses :orog0
+:paladin misses :orog0
+:paladin hits :orog0 for 7
+:cleric hits :orog0 for 7
+:sorcerer misses :orog0
 round# 1
-:orog0 misses :sorcerer
 :orog0 misses :paladin
-:orog1 misses :paladin
-:orog1 hits :cleric for 11
-:orog2 hits :paladin for 7
-:orog2 misses :fighter
+:orog0 hits :cleric for 11
+:orog1 misses :cleric
+:orog1 misses :fighter
+:orog2 misses :cleric
+:orog2 hits :sorcerer for 7
+:fighter hits :orog0 for 12
+:fighter hits :orog0 for 7
+:paladin misses :orog0
+:paladin misses :orog0
 :cleric misses :orog0
-:cleric crits :orog0 for 14
-:paladin hits :orog0 for 8
-:paladin hits :orog1 for 8
-:sorcerer misses :orog1
-:fighter misses :orog1
-:fighter misses :orog1
-:fighter hits :orog1 for 7
+:sorcerer hits :orog0 for 11
 round# 2
-:orog1 misses :paladin
-:orog1 hits :cleric for 15
+:orog1 misses :cleric
+:orog1 hits :sorcerer for 6
+:orog2 crits :paladin for 14
 :orog2 hits :cleric for 10
-:orog2 misses :paladin
-:cleric hits :orog1 for 11
-:cleric crits :orog1 for 13
-:paladin hits :orog2 for 9
-:paladin misses :orog2
-:sorcerer misses :orog2
-:fighter hits :orog2 for 12
-:fighter misses :orog2
-:fighter crits :orog2 for 11
+:fighter hits :orog1 for 9
+:fighter hits :orog1 for 7
+:paladin misses :orog1
+:paladin misses :orog1
+:sorcerer misses :orog1
 round# 3
+:orog1 hits :paladin for 7
+:orog1 hits :paladin for 15
+:orog2 hits :paladin for 14
+the sorcerer uses shield to block :orog2
+:orog2 misses :sorcerer
+:fighter hits :orog1 for 9
+:fighter misses :orog1
+:sorcerer crits :orog1 for 26
+round# 4
 the sorcerer uses shield to block :orog2
 :orog2 misses :sorcerer
 :orog2 misses :sorcerer
-:cleric misses :orog2
-:cleric misses :orog2
-:paladin misses :orog2
-:paladin misses :orog2
-:sorcerer hits :orog2 for 8
+:fighter hits :orog2 for 9
 :fighter misses :orog2
+:sorcerer misses :orog2
+round# 5
+the sorcerer uses shield to block :orog2
+:orog2 misses :sorcerer
+:orog2 misses :sorcerer
+:fighter misses :orog2
+:fighter misses :orog2
+:sorcerer hits :orog2 for 16
+round# 6
+the sorcerer uses shield to block :orog2
+:orog2 misses :sorcerer
+:orog2 hits :fighter for 16
 :fighter hits :orog2 for 11
-:fighter hits :orog0 for 8
-:cleric casts cure wound and heals :cleric to 16
+:fighter crits :orog2 for 9
+:sorcerer hits :orog0 for 6
+:cleric casts :spell-1 cure wound and heals :paladin from 0 to 9
+:cleric casts :spell-2 cure wound and heals :cleric from 0 to 15
 :cleric has no remaining spell slots to heal with
-remaining hp: 129</code></pre>
+remaining hp: 62</code></pre>
 </details>
-
 <details>
-<summary>137 hp</summary>
-
-<pre><code>simulation# 1
+<summary>73 hp</summary>
+<pre><code>simulation# 6
 encounter# 0
 round# 0
 :cleric misses :orog0
-:cleric misses :orog0
-:fighter misses :orog0
-:fighter crits :orog0 for 15
-:fighter misses :orog0
-:orog0 misses :paladin
-:orog0 misses :cleric
-:orog1 misses :cleric
-:orog1 hits :sorcerer for 9
-:orog2 misses :cleric
-:orog2 misses :paladin
-:paladin misses :orog0
-:paladin misses :orog0
-:sorcerer misses :orog0
-round# 1
-:cleric hits :orog0 for 11
-:cleric misses :orog0
-:fighter crits :orog0 for 17
-:fighter misses :orog1
-:fighter misses :orog1
+:orog0 hits :cleric for 8
+:orog0 hits :fighter for 8
 :orog1 misses :paladin
+:orog1 crits :sorcerer for 19
+:orog2 hits :paladin for 7
+:orog2 hits :cleric for 10
+:paladin crits :orog0 for 13
+:paladin hits :orog0 for 12
+:fighter hits :orog0 for 7
+:fighter hits :orog0 for 14
+:sorcerer hits :orog1 for 8
+round# 1
+:cleric misses :orog1
+:orog1 hits :cleric for 13
+:orog1 misses :paladin
+:orog2 hits :cleric for 8
+:orog2 misses :sorcerer
+:paladin misses :orog1
+:paladin hits :orog1 for 10
+:fighter misses :orog1
+:fighter hits :orog1 for 12
+:sorcerer misses :orog1
+round# 2
+the sorcerer uses shield to block :orog1
+:orog1 misses :sorcerer
 :orog1 misses :fighter
-:orog2 crits :sorcerer for 11
-:orog2 misses :fighter
+:orog2 crits :sorcerer for 20
+:orog2 hits :fighter for 9
 :paladin hits :orog1 for 10
 :paladin misses :orog1
-:sorcerer hits :orog1 for 11
-round# 2
-:cleric hits :orog1 for 11
-:cleric hits :orog1 for 8
-:fighter hits :orog1 for 7
-:fighter hits :orog2 for 10
+:fighter crits :orog1 for 10
 :fighter misses :orog2
-:orog2 misses :paladin
-:orog2 hits :cleric for 15
-:paladin misses :orog2
-:paladin hits :orog2 for 12
-:sorcerer crits :orog2 for 23
-:cleric casts cure wound and heals :sorcerer to 26
+round# 3
+:orog2 misses :fighter
+:orog2 misses :fighter
+:paladin crits :orog2 for 16
+:paladin hits :orog2 for 9
+:fighter misses :orog2
+:fighter hits :orog2 for 11
+round# 4
+:orog2 hits :paladin for 13
+:orog2 misses :fighter
+:paladin hits :orog2 for 14
+:paladin hits :orog0 for 8
+:fighter hits :orog0 for 8
+:fighter misses :orog0
+:cleric casts :spell-1 cure wound and heals :cleric from 0 to 5
+:cleric casts :spell-2 cure wound and heals :sorcerer from 0 to 17
 :cleric has no remaining spell slots to heal with
-remaining hp: 137</code></pre>
+remaining hp: 73</code></pre>
 </details>
-
 <details>
-<summary>154 hp</summary>
-
+<summary>88 hp</summary>
+<pre><code>simulation# 2
+encounter# 0
+round# 0
+:cleric misses :orog0
+:paladin misses :orog0
+:paladin hits :orog0 for 7
+:orog0 misses :fighter
+:orog0 hits :fighter for 13
+:orog1 misses :paladin
+:orog1 hits :cleric for 11
+:orog2 misses :cleric
+the sorcerer uses shield to block :orog2
+:orog2 misses :sorcerer
+:fighter hits :orog0 for 12
+:fighter misses :orog0
+:sorcerer misses :orog0
+round# 1
+:cleric misses :orog0
+:paladin misses :orog0
+:paladin misses :orog0
+:orog0 misses :paladin
+:orog0 misses :cleric
+:orog1 hits :fighter for 9
+:orog1 hits :cleric for 13
+:orog2 hits :sorcerer for 12
+:orog2 hits :cleric for 15
+:fighter hits :orog0 for 9
+:fighter hits :orog0 for 9
+:sorcerer hits :orog1 for 5
+round# 2
+:paladin misses :orog1
+:paladin misses :orog1
+:orog1 misses :fighter
+the sorcerer uses shield to block :orog1
+:orog1 misses :sorcerer
+:orog2 misses :sorcerer
+:orog2 hits :fighter for 7
+:fighter hits :orog1 for 13
+:fighter hits :orog1 for 12
+:sorcerer hits :orog1 for 8
+round# 3
+:paladin hits :orog1 for 7
+:paladin misses :orog2
+:orog2 misses :sorcerer
+:orog2 crits :sorcerer for 23
+:fighter misses :orog2
+:fighter hits :orog2 for 11
+:sorcerer hits :orog2 for 20
+round# 4
+:paladin misses :orog2
+:paladin hits :orog2 for 10
+:fighter hits :orog0 for 13
+:fighter misses :orog0
+:sorcerer hits :orog0 for 7
+:cleric casts :spell-1 cure wound and heals :cleric from 0 to 9
+:cleric casts :spell-2 cure wound and heals :sorcerer from 3 to 20
+:cleric has no remaining spell slots to heal with
+remaining hp: 88</code></pre>
+</details>
+<details>
+<summary>90 hp</summary>
+<pre><code>simulation# 4
+encounter# 0
+round# 0
+:cleric hits :orog0 for 8
+:sorcerer hits :orog0 for 5
+:orog0 misses :paladin
+:orog0 hits :fighter for 6
+:orog1 misses :paladin
+:orog1 misses :fighter
+:orog2 misses :fighter
+:orog2 misses :paladin
+:paladin misses :orog0
+:paladin hits :orog0 for 14
+:fighter misses :orog0
+:fighter hits :orog0 for 12
+round# 1
+:cleric hits :orog0 for 10
+:sorcerer misses :orog1
+:orog1 hits :sorcerer for 12
+:orog1 hits :paladin for 13
+:orog2 hits :cleric for 11
+:orog2 hits :paladin for 11
+:paladin hits :orog1 for 7
+:paladin misses :orog1
+:fighter crits :orog1 for 20
+:fighter misses :orog1
+round# 2
+:cleric hits :orog1 for 4
+:sorcerer misses :orog1
+:orog1 misses :cleric
+:orog1 misses :sorcerer
+:orog2 hits :paladin for 13
+:orog2 hits :paladin for 6
+:paladin misses :orog1
+:paladin misses :orog1
+:fighter misses :orog1
+:fighter misses :orog1
+round# 3
+:cleric misses :orog1
+:sorcerer misses :orog1
+:orog1 misses :cleric
+:orog1 hits :cleric for 8
+:orog2 misses :sorcerer
+:orog2 misses :cleric
+:paladin misses :orog1
+:paladin hits :orog1 for 12
+:fighter misses :orog2
+:fighter hits :orog2 for 10
+round# 4
+:cleric misses :orog2
+:sorcerer misses :orog2
+the sorcerer uses shield to block :orog2
+:orog2 misses :sorcerer
+:orog2 misses :fighter
+:paladin hits :orog2 for 8
+:paladin misses :orog2
+:fighter misses :orog2
+:fighter misses :orog2
+round# 5
+:cleric misses :orog2
+:sorcerer misses :orog2
+:orog2 hits :cleric for 7
+:orog2 hits :cleric for 8
+:paladin crits :orog2 for 15
+:paladin hits :orog2 for 8
+:fighter hits :orog0 for 14
+:fighter misses :orog0
+:cleric casts :spell-1 cure wound and heals :paladin from 1 to 7
+:cleric casts :spell-2 cure wound and heals :paladin from 7 to 22
+:cleric has no remaining spell slots to heal with
+remaining hp: 90</code></pre>
+</details>
+<details>
+<summary>100 hp</summary>
 <pre><code>simulation# 3
 encounter# 0
 round# 0
-:fighter crits :orog0 for 13
-:fighter hits :orog0 for 11
-:fighter misses :orog0
 :sorcerer misses :orog0
-:cleric misses :orog0
-:cleric hits :orog0 for 9
-the sorcerer uses shield to block :orog0
+:orog0 hits :fighter for 16
 :orog0 misses :sorcerer
-:orog0 hits :fighter for 6
-:orog1 misses :cleric
-:orog1 misses :sorcerer
+:orog1 hits :sorcerer for 10
+:orog1 misses :fighter
+:orog2 misses :cleric
 :orog2 misses :sorcerer
-:orog2 misses :paladin
+:cleric misses :orog0
+:fighter hits :orog0 for 12
+:fighter misses :orog0
 :paladin misses :orog0
 :paladin misses :orog0
 round# 1
-:fighter crits :orog0 for 13
-:fighter misses :orog0
-:fighter hits :orog0 for 9
-:sorcerer misses :orog1
-:cleric misses :orog1
-:cleric misses :orog1
+:sorcerer misses :orog0
+:orog0 misses :paladin
+:orog0 misses :paladin
+:orog1 crits :sorcerer for 20
 :orog1 misses :sorcerer
-:orog1 misses :paladin
-:orog2 crits :fighter for 16
-:orog2 misses :fighter
-:paladin hits :orog1 for 14
-:paladin hits :orog1 for 10
+:orog2 hits :paladin for 14
+:orog2 misses :paladin
+:cleric hits :orog0 for 6
+:fighter hits :orog0 for 12
+:fighter hits :orog0 for 13
+:paladin hits :orog1 for 9
+:paladin misses :orog1
 round# 2
-:fighter hits :orog1 for 12
-:fighter hits :orog1 for 12
-:fighter hits :orog2 for 8
-:sorcerer hits :orog2 for 14
-:cleric misses :orog2
-:cleric misses :orog2
-:orog2 misses :fighter
-:orog2 misses :fighter
-:paladin misses :orog2
+:sorcerer hits :orog1 for 17
+:orog1 misses :cleric
+:orog1 hits :sorcerer for 8
+:orog2 misses :cleric
+:orog2 hits :cleric for 8
+:cleric casts :spell-1 cure wound and heals :sorcerer from 0 to 10
+:fighter hits :orog1 for 8
+:fighter hits :orog1 for 10
+:paladin hits :orog1 for 9
 :paladin misses :orog2
 round# 3
+:sorcerer misses :orog2
+:orog2 misses :sorcerer
+:orog2 hits :paladin for 9
+:cleric hits :orog2 for 6
 :fighter misses :orog2
-:fighter hits :orog2 for 11
-:fighter hits :orog2 for 8
-:sorcerer misses :orog0
-:cleric misses :orog0
-:cleric misses :orog0
-:paladin hits :orog0 for 10
+:fighter misses :orog2
+:paladin hits :orog2 for 14
+:paladin hits :orog2 for 11
+round# 4
+:sorcerer hits :orog2 for 16
+:cleric hits :orog0 for 7
+:fighter hits :orog0 for 12
+:fighter hits :orog0 for 14
+:paladin hits :orog0 for 9
 :paladin misses :orog0
-:cleric casts cure wound and heals :fighter to 34
+:cleric casts :spell-2 cure wound and heals :sorcerer from 10 to 21
 :cleric has no remaining spell slots to heal with
-remaining hp: 154</code></pre>
+remaining hp: 100</code></pre>
+</details>
+<details>
+<summary>103 hp</summary>
+<pre><code>simulation# 10
+encounter# 0
+round# 0
+:paladin hits :orog0 for 14
+:paladin misses :orog0
+:fighter misses :orog0
+:fighter hits :orog0 for 14
+the sorcerer uses shield to block :orog0
+:orog0 misses :sorcerer
+:orog0 hits :fighter for 13
+:orog1 misses :sorcerer
+:orog1 hits :fighter for 7
+:orog2 hits :cleric for 16
+:orog2 hits :cleric for 8
+:cleric hits :orog0 for 10
+:sorcerer hits :orog1 for 14
+round# 1
+:paladin misses :orog1
+:paladin hits :orog1 for 8
+:fighter crits :orog1 for 20
+:fighter misses :orog1
+:orog1 hits :fighter for 9
+:orog1 misses :paladin
+:orog2 misses :sorcerer
+:orog2 hits :fighter for 15
+:cleric casts :spell-1 cure wound and heals :fighter from 0 to 8
+:sorcerer hits :orog1 for 5
+round# 2
+:paladin misses :orog2
+:paladin misses :orog2
+:fighter hits :orog2 for 12
+:fighter crits :orog2 for 11
+:orog2 hits :fighter for 6
+:orog2 crits :cleric for 7
+:cleric misses :orog2
+:sorcerer misses :orog2
+round# 3
+:paladin misses :orog2
+:paladin hits :orog2 for 11
+:fighter misses :orog2
+:fighter hits :orog2 for 13
+:cleric misses :orog0
+:sorcerer hits :orog0 for 8
+:cleric casts :spell-2 cure wound and heals :fighter from 2 to 14
+:cleric has no remaining spell slots to heal with
+remaining hp: 103</code></pre>
+</details>
+<details>
+<summary>119 hp</summary>
+<pre><code>simulation# 9
+encounter# 0
+round# 0
+:orog0 hits :sorcerer for 12
+:orog0 misses :cleric
+:orog1 misses :fighter
+:orog1 misses :cleric
+:orog2 hits :paladin for 14
+:orog2 misses :cleric
+:cleric crits :orog0 for 14
+:fighter misses :orog0
+:fighter misses :orog0
+:sorcerer hits :orog0 for 10
+:paladin hits :orog0 for 12
+:paladin hits :orog0 for 10
+round# 1
+the sorcerer uses shield to block :orog0
+:orog0 misses :sorcerer
+:orog0 misses :paladin
+:orog1 hits :sorcerer for 13
+:orog1 hits :fighter for 16
+:orog2 misses :fighter
+:orog2 misses :fighter
+:cleric hits :orog0 for 6
+:fighter hits :orog0 for 9
+:fighter misses :orog1
+:sorcerer misses :orog1
+:paladin misses :orog1
+:paladin hits :orog1 for 12
+round# 2
+:orog1 misses :sorcerer
+:orog1 misses :paladin
+:orog2 misses :cleric
+:orog2 hits :sorcerer for 9
+:cleric misses :orog1
+:fighter hits :orog1 for 12
+:fighter hits :orog1 for 7
+:sorcerer misses :orog1
+:paladin hits :orog1 for 13
+:paladin misses :orog1
+round# 3
+:orog1 hits :paladin for 7
+:orog1 misses :cleric
+:orog2 misses :fighter
+:orog2 misses :paladin
+:cleric misses :orog1
+:fighter misses :orog1
+:fighter misses :orog1
+:sorcerer hits :orog1 for 16
+:paladin hits :orog2 for 9
+:paladin crits :orog2 for 16
+round# 4
+:orog2 misses :paladin
+the sorcerer uses shield to block :orog2
+:orog2 misses :sorcerer
+:cleric misses :orog2
+:fighter hits :orog2 for 10
+:fighter misses :orog2
+:sorcerer misses :orog2
+:paladin misses :orog2
+:paladin misses :orog2
+round# 5
+:orog2 misses :fighter
+:orog2 misses :paladin
+:cleric misses :orog2
+:fighter hits :orog2 for 14
+:fighter hits :orog0 for 14
+:sorcerer hits :orog0 for 9
+:paladin misses :orog0
+:paladin hits :orog0 for 11
+:cleric casts :spell-1 cure wound and heals :sorcerer from 4 to 14
+:cleric casts :spell-2 cure wound and heals :sorcerer from 14 to 30
+:cleric has no remaining spell slots to heal with
+remaining hp: 119</code></pre>
+</details>
+<details>
+<summary>119 hp</summary>
+<pre><code>simulation# 0
+encounter# 0
+round# 0
+:cleric hits :orog0 for 5
+:orog0 hits :paladin for 13
+:orog0 misses :fighter
+:orog1 hits :paladin for 9
+:orog1 misses :fighter
+:orog2 hits :sorcerer for 9
+:orog2 misses :cleric
+:paladin hits :orog0 for 14
+:paladin hits :orog0 for 9
+:fighter misses :orog0
+:fighter hits :orog0 for 10
+:sorcerer misses :orog0
+round# 1
+:cleric hits :orog0 for 9
+:orog1 hits :fighter for 9
+:orog1 misses :cleric
+the sorcerer uses shield to block :orog2
+:orog2 misses :sorcerer
+:orog2 misses :cleric
+:paladin misses :orog1
+:paladin crits :orog1 for 16
+:fighter misses :orog1
+:fighter hits :orog1 for 7
+:sorcerer hits :orog1 for 12
+round# 2
+:cleric hits :orog1 for 7
+the sorcerer uses shield to block :orog1
+:orog1 misses :sorcerer
+:orog1 misses :paladin
+:orog2 misses :paladin
+:orog2 misses :cleric
+:paladin misses :orog1
+:paladin misses :orog1
+:fighter misses :orog1
+:fighter misses :orog1
+:sorcerer misses :orog1
+round# 3
+:cleric misses :orog1
+:orog1 misses :paladin
+:orog1 misses :sorcerer
+:orog2 hits :fighter for 6
+:orog2 hits :sorcerer for 11
+:paladin crits :orog1 for 18
+:paladin hits :orog2 for 14
+:fighter misses :orog2
+:fighter hits :orog2 for 14
+:sorcerer hits :orog2 for 6
+round# 4
+:cleric misses :orog2
+:orog2 misses :paladin
+:orog2 hits :fighter for 9
+:paladin hits :orog2 for 10
+:paladin misses :orog2
+:fighter misses :orog2
+:fighter hits :orog2 for 9
+:sorcerer hits :orog0 for 12
+:cleric casts :spell-1 cure wound and heals :fighter from 20 to 28
+:cleric casts :spell-2 cure wound and heals :paladin from 22 to 35
+:cleric has no remaining spell slots to heal with
+remaining hp: 119</code></pre>
+</details>
+<details>
+<summary>139 hp</summary>
+<pre><code>simulation# 7
+encounter# 0
+round# 0
+:cleric misses :orog0
+:sorcerer hits :orog0 for 9
+:fighter crits :orog0 for 17
+:fighter hits :orog0 for 7
+:orog0 crits :cleric for 23
+:orog0 misses :paladin
+:orog1 hits :cleric for 13
+the sorcerer uses shield to block :orog1
+:orog1 misses :sorcerer
+:orog2 misses :paladin
+:orog2 misses :paladin
+:paladin hits :orog0 for 9
+:paladin hits :orog1 for 11
+round# 1
+:cleric misses :orog1
+:sorcerer misses :orog1
+:fighter crits :orog1 for 11
+:fighter hits :orog1 for 13
+:orog1 misses :cleric
+:orog1 misses :paladin
+:orog2 hits :fighter for 9
+:orog2 misses :paladin
+:paladin misses :orog1
+:paladin hits :orog1 for 7
+round# 2
+:cleric hits :orog2 for 9
+:sorcerer misses :orog2
+:fighter hits :orog2 for 14
+:fighter misses :orog2
+:orog2 misses :cleric
+:orog2 misses :sorcerer
+:paladin misses :orog2
+:paladin hits :orog2 for 13
+round# 3
+:cleric hits :orog2 for 6
+:sorcerer hits :orog2 for 11
+:fighter misses :orog0
+:fighter crits :orog0 for 10
+:paladin hits :orog0 for 8
+:paladin hits :orog0 for 9
+:cleric casts :spell-1 cure wound and heals :cleric from 2 to 7
+:cleric casts :spell-2 cure wound and heals :cleric from 7 to 22
+:cleric has no remaining spell slots to heal with
+remaining hp: 139</code></pre>
+</details>
+<details>
+<summary>150 hp</summary>
+<pre><code>simulation# 1
+encounter# 0
+round# 0
+:paladin hits :orog0 for 8
+:paladin hits :orog0 for 11
+:fighter misses :orog0
+:fighter hits :orog0 for 12
+:sorcerer misses :orog0
+:orog0 misses :fighter
+:orog0 misses :paladin
+:orog1 hits :paladin for 9
+:orog1 hits :sorcerer for 7
+:orog2 misses :paladin
+:orog2 misses :paladin
+:cleric hits :orog0 for 10
+round# 1
+:paladin misses :orog0
+:paladin misses :orog0
+:fighter crits :orog0 for 15
+:fighter misses :orog1
+:sorcerer hits :orog1 for 10
+:orog1 misses :sorcerer
+:orog1 hits :fighter for 5
+:orog2 hits :cleric for 5
+:orog2 misses :fighter
+:cleric misses :orog1
+round# 2
+:paladin misses :orog1
+:paladin hits :orog1 for 7
+:fighter hits :orog1 for 12
+:fighter hits :orog1 for 13
+:sorcerer misses :orog1
+:orog1 hits :cleric for 5
+:orog1 misses :paladin
+:orog2 misses :fighter
+:orog2 misses :sorcerer
+:cleric misses :orog1
+round# 3
+:paladin misses :orog1
+:paladin hits :orog1 for 10
+:fighter hits :orog2 for 10
+:fighter misses :orog2
+:sorcerer misses :orog2
+:orog2 misses :sorcerer
+:orog2 misses :paladin
+:cleric misses :orog2
+round# 4
+:paladin crits :orog2 for 16
+:paladin hits :orog2 for 7
+:fighter hits :orog0 for 10
+:fighter misses :orog0
+:sorcerer hits :orog0 for 12
+:cleric hits :orog0 for 6
+:cleric casts :spell-1 cure wound and heals :cleric from 28 to 36
+:cleric casts :spell-2 cure wound and heals :paladin from 35 to 44
+:cleric has no remaining spell slots to heal with
+remaining hp: 150</code></pre>
 </details>
 
 #### Blessing before combat. Average across 3000 sims: 107.3
