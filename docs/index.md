@@ -42,6 +42,12 @@ then `choice A` is better than `choice B`. What are resources? All of the stuff 
 The easiest decisions to compare are the ones where all of the resource types stay constant except one!
 This allows us to not worry about comparing resources to *each other* in terms of "living through the day" optimization and focus instead on which option maximizes a *particular* resource.
 
+By maximizing the remaining resources after an encounter, we are choosing the option that puts us in the best position to **survive the rest of the day.**
+
+### That's all very abstract, math guy. Do you have an actual example?
+
+Yes!
+
 ### The conclusion is incorrect because the axioms do not accurately model the game.
 
 Beginning 5e, my groups' clerics often deliberated whether to use bless or guiding bolt, and we didn't consider using cure wounds because it didn't make enemies die faster. Guiding bolt deals 4d6 (UP TO 24), which seems like a lot. But being the clever players we were, we thought about how great a percentage increase in damage from bless we could inflict over multiple rounds. We decided to go with bless, and count all the damage we did with attacks that only hit because of bless. Without getting too specific, the sum was usually over 20, so we decided that it was a good spell.
