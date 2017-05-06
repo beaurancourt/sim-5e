@@ -39,7 +39,7 @@
 (defn- cast-cure-wounds?
   [world actor players enemies]
   (and
-    (> (-> world actor :spell-1) 0)
+    (lowest-spell-slot world actor)
     (not= (count players) (count (alive world players)))))
 
 (defn- bring-up-friend
@@ -49,8 +49,7 @@
 
 (defn use-all-slots-on-healing
   [world players actor]
-  (if-let [spell-level (first (filter #(-> world actor % (> 0))
-                                      (map #(keyword (str "spell-" %)) (range 1 10))))]
+  (if-let [spell-level (lowest-spell-slot world actor)]
     (let [heal-target (first (sort (fn [a b]
                                      (> (missing-hp world a) (missing-hp world b)))
                                    players))]
@@ -65,7 +64,7 @@
   [world actor players enemies]
   (cond
     (<= (-> world actor :hp) 0) world
-    (cast-cure-wounds? world actor players enemies) (bring-up-friend world actor :spell-1 players)
+    (cast-cure-wounds? world actor players enemies) (bring-up-friend world actor (lowest-spell-slot world actor) players)
     :else (attack world actor players enemies)))
 
 (defmethod take-short-rest class-key
