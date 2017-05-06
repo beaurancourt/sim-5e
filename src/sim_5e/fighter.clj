@@ -20,7 +20,7 @@
                             (< level 11) 2
                             :else 3)]
     {:fighter {:pc true
-               :ac 19
+               :ac 18
                :init ((roll 20 0))
                :hit-dice level
                :protection-style false
@@ -29,12 +29,12 @@
                :reaction true
                :defense-advantage false
                :defense-disadvantage false
-               ;:attacks (mapv (constantly duelist-attack) (range number-of-attacks))
+               :attacks (mapv (constantly duelist-attack) (range number-of-attacks))
                ;:attacks (mapv (constantly melee-attack) (range number-of-attacks))
                ;:attacks (into (mapv (constantly two-handed) (range number-of-attacks))
                               ;[{:num 1 :sides 4 :mod main-stat :hit to-hit :two-handed true}])
-               :attacks (into (mapv (constantly duelist-quarterstaff) (range number-of-attacks))
-                              [{:num 1 :sides 4 :mod (+ main-stat 2) :hit to-hit :two-handed false}])
+               ;:attacks (into (mapv (constantly duelist-quarterstaff) (range number-of-attacks))
+                              ;[{:num 1 :sides 4 :mod (+ main-stat 2) :hit to-hit :two-handed false}])
                ;:attacks (mapv (constantly light-attack) (range (+ number-of-attacks 1))) ; two weapon fighting
                :max-hp max-hp
                :hp max-hp}}))
