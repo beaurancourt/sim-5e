@@ -17,6 +17,7 @@
                      :hit-dice level
                      :init ((roll 20 0))
                      :casting-mod casting-mod
+                     :healing-mod (main-stat level)
                      :spell-dc (+ 8 casting-mod)
                      :attacks [melee-attack]
                      :reaction true

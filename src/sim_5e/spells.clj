@@ -29,8 +29,8 @@
                     (+ (-> world target :hp)
                        ((roll (spell-level-to-num spell-level)
                               8
-                              (-> world actor :casting-mod)))))]
-    (log actor " casts cure wound and heals " target " to " new-hp)
+                              (-> world actor :healing-mod)))))]
+    (log actor " casts " spell-level " cure wound and heals " target " from " (-> world target :hp) " to " new-hp)
     (-> world
         (update-in [actor spell-level] - 1)
         (update-in [target :hp] (constantly new-hp)))))
