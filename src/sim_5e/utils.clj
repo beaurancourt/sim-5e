@@ -226,3 +226,8 @@
 (defn missing-hp
   [world actor]
   (- (-> world actor :max-hp) (-> world actor :hp)))
+
+(defn lowest-spell-slot
+  [world actor]
+  (first (filter #(-> world actor % (> 0))
+                 (map #(keyword (str "spell-" %)) (range 1 10)))))
