@@ -121,4 +121,3 @@
   []
   (spit "log.txt" "")
   (println 3 (simulate 3)))
-(-main)
