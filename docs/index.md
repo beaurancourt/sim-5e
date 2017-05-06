@@ -13,40 +13,34 @@ There are more [guides](http://rpgbot.net/dnd5/characters/classes/) that offer o
 Yet, what are we *truly* trying to optimize for?
 
 Here, I propose the an optimization function: maximize the probability that your party lives through an adventuring day as defined by page 84 of the DMG.
-One such adventuring day is 6 medium difficulty encounters for a party of 4 PCs at level 5. The DMG suggests a short rest 1/3 and 2/3 the way through an adventuring day.
+One such adventuring day is 6 medium difficulty encounters for a party of 4 PCs at level 5.
+The DMG suggests a short rest 1/3 and 2/3 the way through an adventuring day.
 
 Why should that be the criteria? Why not optimize damage, or control, or utility, or some other measure?
-At the end of the day, all of those are *generalized* by "living through the day". At the end of the day, everything is reset, and you move on to your next day.
+At the end of the day, all of those are *generalized* by "living through the day".
+At the end of the day, everything is reset, and you move on to your next day.
 
-If you do great damage, then awesome! You got through your fights faster, and your enemies have a harder time killing the party.
+If you do great damage, then awesome! You got through your fights faster, and **your enemies have a harder time killing the party.**
 
-If you have great crowd control, then awesome! You got through your fights with more control, and your enemies have a harder time killing the party.
+If you have great crowd control, then awesome! You got through your fights with more control, and **your enemies have a harder time killing the party.**
 
-If you have high utility, then awesome! You were able to cleverly bypass combat, or swing the battlefield to your advantage, and your enemies have a harder time killing the party.
+If you have high utility, then awesome! You were able to cleverly bypass combat, or swing the battlefield to your advantage, and **your enemies have a harder time killing the party.**
 
-But if we have to give up utility for crowd control, how do we decide? If we have to give up crowd control for damage, how do we decide?
+If we have to give up utility for crowd control, how do we decide? If we have to give up crowd control for damage, how do we decide?
 
-You decide by doing the thing that maximizes the chance that your party lives to fight another day!
-
+**You decide by doing the thing that maximizes the chance that your party lives to fight another day!**
 
 ### That sounds complicated in practice. Is there an easier way to think about it?
 
-Any action you take in combat will change the amount of HP you have at the end of combat. The actions that result in the greatest amount of HP at the end of combat are the best actions to take if your goal is have the greatest possible amount of HP at the end of combat.
+There sure is!
 
-<i>(This means that when circumstances outside of combat dictate your goals, having the greatest possible amount of HP at the end of combat is not necessarily your goal.)</i>
+On an individual enounter bases, you want to make the choice that leaves you with the **most remaining resources**.
 
-&#09; We assume that your goal as a player is to have the greatest possible amount of HP at the end of combat.
+How does that work? If `choice A` leaves you with more remaining resources than `choice B` after one encounter,
+then `choice A` is better than `choice B`. What are resources? All of the stuff that carries over: spell slots, rages, action surges, etc.
 
-In combat, enemy actions change the amount of HP you have at the end of combat. Most enemy actions involve spells and spell or weapon attacks that reduce your HP. Your goal is to prevent your enemies from successfully using these actions. We assume that the way enemies are prevented from taking actions that reduce your HP is for you to reduce their HP to 0 by taking your own actions.
-The attack action, bless and cure wounds each have different rules, but accomplish the same thing in combat: changing the amount of HP you have at the end of combat. Our goal is to discover which actions are the best for you to take in combat, that is, which actions prevent enemies from taking actions that reduce your HP.
-
-<i>(These are the axioms that support the following logic:)</i>
-
-It is possible to take the attack action every round your HP is greater than 0. Taking the attack action reduces enemy HP. When an enemy's HP is reduced to 0, it cannot take actions that reduce your HP. Attacking in combat helps accomplish your goal.
-Casting cure wounds does not reduce enemy HP. Casting cure wounds in combat does not help to accomplish your goal, except when an ally is at 0 HP, meaning they cannot take actions.
-
-When you or your allies are affected by bless and you take the attack action, bless is helping to accomplish your goal. It probabilistically increases the damage you or your allies cause by taking the attack action. In fact, the average increase in damage caused by you or your allies when affected by bless is greater than the damage caused by an taking the attack action.
-Therefore, you want to cast bless in combat, take the attack action until your enemy's HP is reduced to 0.
+The easiest decisions to compare are the ones where all of the resource types stay constant except one!
+This allows us to not worry about comparing resources to *each other* in terms of "living through the day" optimization and focus instead on which option maximizes a *particular* resource.
 
 ### The conclusion is incorrect because the axioms do not accurately model the game.
 
