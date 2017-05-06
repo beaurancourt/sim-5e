@@ -18,7 +18,7 @@
                      :init ((roll 20 0))
                      :casting-mod casting-mod
                      :spell-dc (+ 8 casting-mod)
-                     :attacks [melee-attack melee-attack]
+                     :attacks [melee-attack]
                      :reaction true
                      :attack-advantage false
                      :attack-disadvantage false
