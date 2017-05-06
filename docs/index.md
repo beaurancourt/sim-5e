@@ -1,4 +1,35 @@
-### Why Bless is better than Cure Wounds in combat.
+### What Are We Fighting For?
+As 5e players, we find ourselves making choices that affect combat. Either a roleplay choice will force or avoid combat.
+Perhaps a build choice increases damage at the cost of survivability.
+Maybe you need to need to decide between casting a damage spell, a buffing spell, a control spell, or a healing spell.
+An enemy is about to attack you for sure, should you fight defensively, or attack it on your turn?
+
+In order to answer these questions, we need *an objective function*. We need to define what the *goal* is.
+We need a way to compare options against the objective function, so we can know what the right choice is.
+
+Is the objective function maximizing DPR? [There](http://www.enworld.org/forum/showthread.php?362272-Highest-DPR-Build-Yet) [are](http://www.giantitp.com/forums/showthread.php?522093-5e-Nova-or-DPR-optimization) [plenty](http://www.giantitp.com/forums/showthread.php?522096-Nova-or-DPR-optimization) [of](http://www.giantitp.com/forums/showthread.php?474803-Good-sustained-dpr-builds) [threads](https://docs.google.com/spreadsheets/d/1Bwv7pfPC90BqZVPMu19T075-6cwkphdPJQe1d8gTVbQ/edit) that attempt to maximize dps.
+There are more [guides](http://rpgbot.net/dnd5/characters/classes/) that offer optimization advice than I can count.
+
+Yet, what are we *truly* trying to optimize for?
+
+Here, I propose the an optimization function: maximize the probability that your party lives through an adventuring day as defined by page 84 of the DMG.
+One such adventuring day is 6 medium difficulty encounters for a party of 4 PCs at level 5. The DMG suggests a short rest 1/3 and 2/3 the way through an adventuring day.
+
+Why should that be the criteria? Why not optimize damage, or control, or utility, or some other measure?
+At the end of the day, all of those are *generalized* by "living through the day". At the end of the day, everything is reset, and you move on to your next day.
+
+If you do great damage, then awesome! You got through your fights faster, and your enemies have a harder time killing the party.
+
+If you have great crowd control, then awesome! You got through your fights with more control, and your enemies have a harder time killing the party.
+
+If you have high utility, then awesome! You were able to cleverly bypass combat, or swing the battlefield to your advantage, and your enemies have a harder time killing the party.
+
+But if we have to give up utility for crowd control, how do we decide? If we have to give up crowd control for damage, how do we decide?
+
+You decide by doing the thing that maximizes the chance that your party lives to fight another day!
+
+
+### That sounds complicated in practice. Is there an easier way to think about it?
 
 Any action you take in combat will change the amount of HP you have at the end of combat. The actions that result in the greatest amount of HP at the end of combat are the best actions to take if your goal is have the greatest possible amount of HP at the end of combat.
 
