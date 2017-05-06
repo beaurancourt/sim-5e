@@ -1,54 +1,17 @@
-### What Are We Fighting For?
-As 5e players, we find ourselves making choices that affect combat. Either a roleplay choice will force or avoid combat.
-Perhaps a build choice increases damage at the cost of survivability.
-Maybe you need to need to decide between casting a damage spell, a buffing spell, a control spell, or a healing spell.
-An enemy is about to attack you for sure, should you fight defensively, or attack it on your turn?
+### What should a player do in combat?
+In 5e D&D, players' choices are all related to combat in some way. A roleplay choice will force or avoid combat. Choosing class features can improve damage, survivability, allow a character to take more actions or avoid combat, and usually each one comes at the cost of another. In combat, you need to decide between casting a spell that deals damage, heals or changes your allies' or enemies' conditions. An enemy is about to attack you for sure, should you dodge, disengage or attack? If there's an objective function, you can test each option and know which choice is right.
 
-In order to answer these questions, we need *an objective function*. We need to define what the *goal* is.
-We need a way to compare options against the objective function, so we can know what the right choice is.
+In order to make an objective function for making decisions, the goal of the decisions need to be defined. Typically players have made their goal to be maximizing their damage per round. [There](http://www.enworld.org/forum/showthread.php?362272-Highest-DPR-Build-Yet) are [plenty](http://www.giantitp.com/forums/showthread.php?522093-5e-Nova-or-DPR-optimization) of [threads](http://www.giantitp.com/forums/showthread.php?522096-Nova-or-DPR-optimization) that [attempt](http://www.giantitp.com/forums/showthread.php?474803-Good-sustained-dpr-builds) to [maximize](https://docs.google.com/spreadsheets/d/1Bwv7pfPC90BqZVPMu19T075-6cwkphdPJQe1d8gTVbQ/edit) DPR and most [guides](http://rpgbot.net/dnd5/characters/classes/) revolve around maximizing DPR. Should that really be your goal?
 
-Is the objective function maximizing DPR? [There](http://www.enworld.org/forum/showthread.php?362272-Highest-DPR-Build-Yet) are [plenty](http://www.giantitp.com/forums/showthread.php?522093-5e-Nova-or-DPR-optimization) of [threads](http://www.giantitp.com/forums/showthread.php?522096-Nova-or-DPR-optimization) that [attempt](http://www.giantitp.com/forums/showthread.php?474803-Good-sustained-dpr-builds) to [maximize](https://docs.google.com/spreadsheets/d/1Bwv7pfPC90BqZVPMu19T075-6cwkphdPJQe1d8gTVbQ/edit) dps.
-There are more [guides](http://rpgbot.net/dnd5/characters/classes/) that offer optimization advice than I can count.
+### What are we trying to optimize for?
 
-Yet, what are we *truly* trying to optimize for?
+You should maximize the probability that your party lives through an adventuring day. Page 84 of the Dungeon Master's Guide says most parties can handle 6-8 medium or hard encounters per day. The DMG also says the party will likely need to take two short rests during each of these days. At the end of the day, all of the decisions a party makes contribute to survival. The objective function needs to account for all of them (or as many as possible).
 
-Here, I propose the an optimization function: maximize the probability that your party lives through an adventuring day as defined by page 84 of the DMG.
-One such adventuring day is 6 medium difficulty encounters for a party of 4 PCs at level 5.
-The DMG suggests a short rest 1/3 and 2/3 the way through an adventuring day.
+Damage, control and defense are all measurable individually with the rules, but there isn't a way to compare how each one stacks up at the cost of the others. If you have great defenses and healing, then your enemies have a harder time killing the party. If you do great damage, then you get through your fights faster, and your enemies have a harder time killing the party. If you have great crowd control, then you can use conditions to delay or prevent enemy attacks, and your enemies have a harder time killing the party. The problem is not knowing which  gives your enemies the hardest time killing the party relative to the others. The goal of the objective function for making decisions should track the remaining resources at the end of an encounter.
 
-Why should that be the criteria? Why not optimize damage, or control, or utility, or some other measure?
-At the end of the day, all of those are *generalized* by "living through the day".
-At the end of the day, everything is reset, and you move on to your next day.
+The remaining resources the function should track are stats that persist between combat: Hit Points, Spell Slots, Rages, etc. If `choice A` leaves you with more remaining resources than `choice B` after one encounter, then `choice A` is better than `choice B`. The easiest decisions to compare are the ones where all of the resource types stay constant except one, so the function will focus on maximizing one particular resource.
 
-If you do great damage, then awesome! You got through your fights faster, and **your enemies have a harder time killing the party.**
-
-If you have great crowd control, then awesome! You got through your fights with more control, and **your enemies have a harder time killing the party.**
-
-If you have high utility, then awesome! You were able to cleverly bypass combat, or swing the battlefield to your advantage, and **your enemies have a harder time killing the party.**
-
-If we have to give up utility for crowd control, how do we decide? If we have to give up crowd control for damage, how do we decide?
-
-**You decide by doing the thing that maximizes the chance that your party lives to fight another day!**
-
-### That sounds complicated in practice. Is there an easier way to think about it?
-
-There sure is!
-
-On an individual enounter bases, you want to make the choice that leaves you with the **most remaining resources**.
-
-How does that work? If `choice A` leaves you with more remaining resources than `choice B` after one encounter,
-then `choice A` is better than `choice B`. What are resources? All of the stuff that carries over: hp, spell slots, rages, action surges, rest dice, etc.
-
-The easiest decisions to compare are the ones where all of the resource types stay constant except one!
-This allows us to not worry about comparing resources to *each other* in terms of "living through the day" optimization and focus instead on which option maximizes a *particular* resource.
-
-By maximizing the remaining resources after an encounter, we are choosing the option that puts us in the best position to **survive the rest of the day.**
-
-### That's all very abstract, math guy. Do you have an actual example?
-
-Yes!
-
-### The conclusion is incorrect because the axioms do not accurately model the game.
+### That's all very abstract, but here is an anecdote that may be more relatable.
 
 Beginning 5e, my groups' clerics often deliberated whether to use bless or guiding bolt, and we didn't consider using cure wounds because it didn't make enemies die faster. Guiding bolt deals 4d6 (UP TO 24), which seems like a lot. But being the clever players we were, we thought about how great a percentage increase in damage from bless we could inflict over multiple rounds. We decided to go with bless, and count all the damage we did with attacks that only hit because of bless. Without getting too specific, the sum was usually over 20, so we decided that it was a good spell.
 
