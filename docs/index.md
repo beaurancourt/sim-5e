@@ -53,7 +53,11 @@ With bless: 2 {:hp 58.326} 3 {:hp 41.906666} 4 {:hp 20.404667}
 The average of the total HP when the Cleric casts bless is 58.32 versus 2 Lizardfolk, 41.90 versus 3 Lizardfolk, and 20.40 versus 4 Lizardfolk. The average of the total HP when the Cleric does not cast bless is 55.10 versus 2 Lizardfolk, 35.49 versus 3 Lizardfolk, and 14.12 versus 4 Lizardfolk.
 
 We feel justified in saying that in these combat examples that bless prevented 3.22 during the average encounter with 2 Lizardfolk , 6.41 during the average encounter with 3 Lizardfolk, and 6.28 damage during the average encounter with 4 Lizardfolk. In this encounter, the Cleric has cast Bless without using an action and maintains concentration regardless of the damage the Cleric takes while the Lizardfolk attack party members randomly. In this case, the best possible case for bless, Bless comes out slightly behind Cure Wounds. 
+
 First round bless. Average across 3000 sims: 98.9hp:
+<details>
+<summary>48 hp</summary>
+
 ```
 simulation# 6
 encounter# 0
@@ -128,7 +132,12 @@ round# 5
 :paladin hits :orog0 for 13
 :cleric has no remaining spell slots to heal with
 remaining hp: 48
+```
+</details>
+<details>
+<summary>69 hp</summary>
 
+```
 simulation# 4
 encounter# 0
 round# 0
@@ -172,7 +181,12 @@ round# 2
 :fighter misses :orog0
 :cleric has no remaining spell slots to heal with
 remaining hp: 69
+```
+</details>
+<details>
+<summary>73 hp</summary>
 
+```
 simulation# 7
 encounter# 0
 round# 0
@@ -216,7 +230,12 @@ the sorcerer uses shield to block :orog2
 :cleric misses :orog0
 :cleric has no remaining spell slots to heal with
 remaining hp: 73
+```
+</details>
+<details>
+<summary>79 hp</summary>
 
+```
 simulation# 1
 encounter# 0
 round# 0
@@ -275,7 +294,12 @@ round# 3
 :sorcerer hits :orog0 for 6
 :cleric has no remaining spell slots to heal with
 remaining hp: 79
+```
+</details>
+<details>
+<summary>95 hp</summary>
 
+```
 simulation# 10
 encounter# 0
 round# 0
@@ -339,7 +363,12 @@ round# 4
 :cleric hits :orog0 for 10
 :cleric has no remaining spell slots to heal with
 remaining hp: 95
+```
+</details>
+<details>
+<summary>102 hp</summary>
 
+```
 simulation# 2
 encounter# 0
 round# 0
@@ -384,7 +413,12 @@ the sorcerer uses shield to block :orog2
 :fighter hits :orog0 for 9 #blessed
 :cleric has no remaining spell slots to heal with
 remaining hp: 102
+```
+</details>
+<details>
+<summary>106 hp</summary>
 
+```
 simulation# 0
 encounter# 0
 round# 0
@@ -447,7 +481,12 @@ round# 4
 :sorcerer hits :orog0 for 14
 :cleric has no remaining spell slots to heal with
 remaining hp: 106
+```
+</details>
+<details>
+<summary>107 hp</summary>
 
+```
 simulation# 5
 encounter# 0
 round# 0
@@ -489,7 +528,12 @@ round# 2
 :cleric hits :orog0 for 9 #blessed
 :cleric has no remaining spell slots to heal with
 remaining hp: 107
+```
+</details>
+<details>
+<summary>118 hp</summary>
 
+```
 simulation# 9
 encounter# 0
 round# 0
@@ -543,7 +587,12 @@ round# 3
 :cleric hits :orog0 for 7
 :cleric has no remaining spell slots to heal with
 remaining hp: 118
+```
+</details>
+<details>
+<summary>129 hp</summary>
 
+```
 simulation# 3
 encounter# 0
 round# 0
@@ -595,7 +644,12 @@ round# 3
 :sorcerer misses :orog0
 :cleric has no remaining spell slots to heal with
 remaining hp: 129
+```
+</details>
+<details>
+<summary>135 hp</summary>
 
+```
 simulation# 8
 encounter# 0
 round# 0
@@ -640,8 +694,13 @@ round# 2
 :cleric has no remaining spell slots to heal with
 remaining hp: 135
 ```
+</details>
+
 
 No bless at all. Average across 3000 sims: 105.4 hp.
+<details>
+<summary>11 hp</summary>
+
 ```
 simulation# 10
 encounter# 0
@@ -709,7 +768,13 @@ round# 5
 :cleric casts cure wound and heals :fighter to 11
 :cleric has no remaining spell slots to heal with
 remaining hp: 11
+```
+</details>
 
+<details>
+<summary>52 hp</summary>
+
+```
 simulation# 8
 encounter# 0
 round# 0
@@ -801,7 +866,13 @@ round# 6
 :cleric misses :orog0
 :cleric has no remaining spell slots to heal with
 remaining hp: 52
+```
+</details>
 
+<details>
+<summary>68 hp</summary>
+
+```
 simulation# 7
 encounter# 0
 round# 0
@@ -868,7 +939,13 @@ round# 5
 :sorcerer hits :orog2 for 11
 :cleric has no remaining spell slots to heal with
 remaining hp: 68
+```
+</details>
 
+<details>
+<summary>96 hp</summary>
+
+```
 simulation# 9
 encounter# 0
 round# 0
@@ -919,7 +996,13 @@ round# 3
 :cleric casts cure wound and heals :cleric to 9
 :cleric has no remaining spell slots to heal with
 remaining hp: 96
+```
+</details>
 
+<details>
+<summary>99 hp</summary>
+
+```
 simulation# 0
 encounter# 0
 round# 0
@@ -973,7 +1056,12 @@ round# 3
 :cleric casts cure wound and heals :fighter to 24
 :cleric has no remaining spell slots to heal with
 remaining hp: 99
+```
+</details>
 
+<details>
+<summary>110 hp</summary>
+```
 simulation# 4
 encounter# 0
 round# 0
@@ -1016,7 +1104,13 @@ round# 2
 :cleric casts cure wound and heals :fighter to 17
 :cleric has no remaining spell slots to heal with
 remaining hp: 110
+```
+</details>
 
+<details>
+<summary>112 hp</summary>
+
+```
 simulation# 2
 encounter# 0
 round# 0
@@ -1081,7 +1175,13 @@ round# 4
 :cleric casts cure wound and heals :sorcerer to 17
 :cleric has no remaining spell slots to heal with
 remaining hp: 112
+```
+</details>
 
+<details>
+<summary>116 hp</summary>
+
+```
 simulation# 6
 encounter# 0
 round# 0
@@ -1136,7 +1236,13 @@ round# 3
 :cleric casts cure wound and heals :sorcerer to 25
 :cleric has no remaining spell slots to heal with
 remaining hp: 116
+```
+</details>
 
+<details>
+<summary>129 hp</summary>
+
+```
 simulation# 5
 encounter# 0
 round# 0
@@ -1198,7 +1304,13 @@ the sorcerer uses shield to block :orog2
 :cleric casts cure wound and heals :cleric to 16
 :cleric has no remaining spell slots to heal with
 remaining hp: 129
+```
+</details>
 
+<details>
+<summary>137 hp</summary>
+
+```
 simulation# 1
 encounter# 0
 round# 0
@@ -1243,7 +1355,13 @@ round# 2
 :cleric casts cure wound and heals :sorcerer to 26
 :cleric has no remaining spell slots to heal with
 remaining hp: 137
+```
+</details>
 
+<details>
+<summary>154 hp</summary>
+
+```
 simulation# 3
 encounter# 0
 round# 0
@@ -1299,8 +1417,12 @@ round# 3
 :cleric has no remaining spell slots to heal with
 remaining hp: 154
 ```
+</details>
 
 Blessing before combat. Average across 3000 sims: 107.3
+<details>
+<summary>89 hp</summary>
+
 ```
 simulation# 1
 encounter# 0
@@ -1357,7 +1479,13 @@ round# 3
 :cleric misses :orog0
 :cleric has no remaining spell slots to heal with
 remaining hp: 89
+```
+</details>
 
+<details>
+<summary>96 hp</summary>
+
+```
 simulation# 2
 encounter# 0
 :cleric blesses :fighter :paladin :cleric
@@ -1417,7 +1545,13 @@ round# 3
 :cleric misses :orog0
 :cleric has no remaining spell slots to heal with
 remaining hp: 96
+```
+</details>
 
+<details>
+<summary>101 hp</summary>
+
+```
 simulation# 7
 encounter# 0
 :cleric blesses :fighter :paladin :cleric
@@ -1460,7 +1594,13 @@ the sorcerer uses shield to block :orog2
 :paladin hits :orog2 for 11
 :cleric has no remaining spell slots to heal with
 remaining hp: 101
+```
+</details>
 
+<details>
+<summary>107 hp</summary>
+
+```
 simulation# 10
 encounter# 0
 :cleric blesses :fighter :paladin :cleric
@@ -1506,7 +1646,13 @@ round# 2
 :fighter hits :orog0 for 9
 :cleric has no remaining spell slots to heal with
 remaining hp: 107
+```
+</details>
 
+<details>
+<summary>109 hp</summary>
+
+```
 simulation# 5
 encounter# 0
 :cleric blesses :fighter :paladin :cleric
@@ -1547,7 +1693,13 @@ round# 2
 :sorcerer misses :orog0
 :cleric has no remaining spell slots to heal with
 remaining hp: 109
+```
+</details>
 
+<details>
+<summary>109 hp</summary>
+
+```
 simulation# 6
 encounter# 0
 :cleric blesses :fighter :paladin :cleric
@@ -1603,7 +1755,13 @@ round# 3
 :cleric hits :orog0 for 4
 :cleric has no remaining spell slots to heal with
 remaining hp: 109
+```
+</details>
 
+<details>
+<summary>121 hp</summary>
+
+```
 simulation# 8
 encounter# 0
 :cleric blesses :fighter :paladin :cleric
@@ -1642,7 +1800,13 @@ round# 2
 :paladin misses :orog0
 :cleric has no remaining spell slots to heal with
 remaining hp: 121
+```
+</details>
 
+<details>
+<summary>132 hp</summary>
+
+```
 simulation# 9
 encounter# 0
 :cleric blesses :fighter :paladin :cleric
@@ -1681,7 +1845,13 @@ round# 2
 :cleric hits :orog0 for 6
 :cleric has no remaining spell slots to heal with
 remaining hp: 132
+```
+</details>
 
+<details>
+<summary>137 hp</summary>
+
+```
 simulation# 0
 encounter# 0
 :cleric blesses :fighter :paladin :cleric
@@ -1727,7 +1897,13 @@ the sorcerer uses shield to block :orog2
 :sorcerer misses :orog0
 :cleric has no remaining spell slots to heal with
 remaining hp: 137
+```
+</details>
 
+<details>
+<summary>138 hp</summary>
+
+```
 simulation# 4
 encounter# 0
 :cleric blesses :fighter :paladin :cleric
@@ -1773,7 +1949,13 @@ round# 2
 :sorcerer hits :orog2 for 4
 :cleric has no remaining spell slots to heal with
 remaining hp: 138
+```
+</details>
 
+<details>
+<summary>143 hp</summary>
+
+```
 simulation# 3
 encounter# 0
 :cleric blesses :fighter :paladin :cleric
@@ -1821,6 +2003,7 @@ round# 2
 :cleric has no remaining spell slots to heal with
 remaining hp: 143
 ```
+</details>
 
 <b>Why Cure Wounds is the best Cleric spell</b>
 
