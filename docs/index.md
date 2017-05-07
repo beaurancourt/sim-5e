@@ -61,7 +61,14 @@ Finally, simulation allows us to throw away our notions about what *should* work
 
 Say that you're a level 5 party of: 1 duelist fighter, 1 vengence paladin, 1 light cleric, and 1 wild magic sorcerer.
 You are the cleric, and you come across 3 [orogs](http://imgur.com/d9a497fa-5938-446d-a15c-c9ddb0355dc2).
-Your party is spent, or unwilling to use any more spell slots / abilities.
+Your party is spent, or unwilling to use any more spell slots / abilities. You guys are, however, currently at full HP.
+You have a level-1 spell slot, and a level-2 spell slot remaining. You have both bless and cure wounds prepared.
+Say (additionally) that the enemies attack randomly, and that gaining a tactical battlefield advantage isn't possible.
+
+Should you:
+* Cast bless the first round of combat, as a level 1 spell, blessing the fighter, the paladin, and the sorcerer?
+* Cast bless the first round of combat, as a level 2 spell, blessing everyone?
+* Attack the first round of combat, saving your slots to heal with?
 
 ### The conclusion is incorrect because the axioms do not accurately model the game.
 
