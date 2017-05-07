@@ -1,8 +1,9 @@
 ### What Are We Fighting For?
-As 5e players, we find ourselves making choices that affect combat. Either a roleplay choice will force or avoid combat.
-Perhaps a build choice increases damage at the cost of survivability.
-Maybe you need to need to decide between casting a damage spell, a buffing spell, a control spell, or a healing spell.
-An enemy is about to attack you for sure, should you fight defensively, or attack it on your turn?
+As 5e DnD players, we find ourselves making choices that affect combat.
+
+* A roleplay choice that forces or avoids combat.
+* A build choice between damage or extra survivability.
+* A combat choice between casting a damage spell, a buffing spell, a control spell, or a healing spell.
 
 In order to answer these questions, we need *an objective function*. We need to define what the *goal* is.
 We need a way to compare options against the objective function, so we can know what the right choice is.
@@ -12,7 +13,7 @@ There are more [guides](http://rpgbot.net/dnd5/characters/classes/) that offer o
 
 Yet, what are we *truly* trying to optimize for?
 
-Here, I propose the an optimization function: maximize the probability that your party lives through an adventuring day as defined by page 84 of the DMG.
+Here, I propose an optimization function: maximize the probability that your party lives through an adventuring day as defined by page 84 of the DMG.
 One such adventuring day is 6 medium difficulty encounters for a party of 4 PCs at level 5.
 The DMG suggests a short rest 1/3 and 2/3 the way through an adventuring day.
 
@@ -44,9 +45,23 @@ This allows us to not worry about comparing resources to *each other* in terms o
 
 By maximizing the remaining resources after an encounter, we are choosing the option that puts us in the best position to **survive the rest of the day.**
 
+
+### Okay. Maximize resources. But how do we know?
+
+If we try to create a closed form solution, we have a very, very difficult problem in front of us, and one that gets larger the more options we introduce.
+If we try to theorycraft it, as is the current style, how do we resolve trading one resource for another? How much extra damage is worth extra survivability?
+Taking note of [world of warcraft's solution](http://simulationcraft.org/), I propose that we simulate it!
+
+Simulation tends to be prudent when the math we're working with is *already* heavily probabilistic in nature.
+It won't get us the *exact* solution, but it'll get us *pretty darn close.*
+
+Finally, simulation allows us to throw away our notions about what *should* work and purely observe evidence!
+
 ### That's all very abstract, math guy. Do you have an actual example?
 
-Yes!
+Say that you're a level 5 party of: 1 duelist fighter, 1 vengence paladin, 1 light cleric, and 1 wild magic sorcerer.
+You are the cleric, and you come across 3 [orogs](http://imgur.com/d9a497fa-5938-446d-a15c-c9ddb0355dc2).
+Your party is spent, or unwilling to use any more spell slots / abilities.
 
 ### The conclusion is incorrect because the axioms do not accurately model the game.
 
