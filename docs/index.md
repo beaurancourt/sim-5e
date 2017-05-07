@@ -46,7 +46,7 @@ This allows us to not worry about comparing resources to *each other* in terms o
 By maximizing the remaining resources after an encounter, we are choosing the option that puts us in the best position to **survive the rest of the day.**
 
 
-### Okay. Maximize resources. But how do we know?
+### Okay. Maximize resources. But how do we measure?
 
 If we try to create a closed form solution, we have a very, very difficult problem in front of us, and one that gets larger the more options we introduce.
 If we try to theorycraft it, as is the current style, how do we resolve trading one resource for another? How much extra damage is worth extra survivability?
