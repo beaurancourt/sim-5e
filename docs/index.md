@@ -67,7 +67,7 @@ Say (additionally) that the enemies attack randomly, and that gaining a tactical
 
 Should you:
 * Cast bless the first round of combat, as a level 1 spell, blessing the fighter, the paladin, and the sorcerer?
-* Cast bless the first round of combat, as a level 2 spell, blessing everyone?
+* Cast bless *before* combat, if you can?
 * Attack the first round of combat, saving your slots to heal with?
 
 ### The conclusion is incorrect because the axioms do not accurately model the game.
