@@ -29,7 +29,7 @@ If you have high utility, then awesome! You were able to cleverly bypass combat,
 
 If we have to give up utility for crowd control, how do we decide? If we have to give up crowd control for damage, how do we decide?
 
-**You decide by doing the thing that maximizes the chance that your party lives to fight another day!**
+You decide by doing the thing that maximizes the chance that your party lives to fight another day!
 
 ### That sounds complicated in practice. Is there an easier way to think about it?
 
@@ -69,6 +69,10 @@ Should you:
 * Cast bless the first round of combat, as a level 1 spell, blessing the fighter, the paladin, and the sorcerer?
 * Cast bless *before* combat, if you can?
 * Attack the first round of combat, saving your slots to heal with?
+
+|Bless|No Bless|Pre-bless|
+|-----|--------|---------|
+|98.8 hp|99.2 hp|104.6 hp|
 
 ### The conclusion is incorrect because the axioms do not accurately model the game.
 
