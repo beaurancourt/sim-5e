@@ -82,7 +82,7 @@ I posted the first 10 simulations of each choice further down the document, in c
 
 |Bless|No Bless|Pre-bless|
 |-----|--------|---------|
-|[98.8 hp](#first-round-bless-average-across-3000-sims-988-hp)|[99.2 hp](#no-bless-at-all-average-across-3000-sims-992-hp)|[104.6 hp](#blessing-before-combat-average-across-3000-sims-1046)|
+|[98.8 hp](#first-round-bless-average-across-3000-sims-988-hp)|[99.2 hp](#no-bless-at-all-average-across-3000-sims-992-hp)|[104.6 hp](#blessing-before-combat-average-across-3000-sims-1046-hp)|
 
 If we can bless *before* combat starts, it's definitely worth it in this scenario. If we *can't*, and have to use our first action to bless, it's a toss-up.
 It's worth further investigation to see how much of an effect intiative order matters.
