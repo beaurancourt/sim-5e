@@ -77,42 +77,30 @@ I posted the first 10 simulations of each choice further down the document, in c
 |-----|--------|---------|
 |[98.8 hp](#first-round-bless-average-across-3000-sims-988-hp)|[99.2 hp](#no-bless-at-all-average-across-3000-sims-992-hp)|[104.6 hp](#blessing-before-combat-average-across-3000-sims-1046)|
 
-### The conclusion is incorrect because the axioms do not accurately model the game.
+If we can bless *before* combat starts, it's definitely worth it in this scenario. If we *can't*, and have to use our first action to bless, it's a toss-up.
+It's worth further investigation to see how much of an affect intiative order matters.
+For now, however, we see that blessing during combat isn't *enormously* better (and is worse, on average) than just attacking, and casting cure wounds afterwards.
 
-Beginning 5e, my groups' clerics often deliberated whether to use bless or guiding bolt, and we didn't consider using cure wounds because it didn't make enemies die faster. Guiding bolt deals 4d6 (UP TO 24), which seems like a lot. But being the clever players we were, we thought about how great a percentage increase in damage from bless we could inflict over multiple rounds. We decided to go with bless, and count all the damage we did with attacks that only hit because of bless. Without getting too specific, the sum was usually over 20, so we decided that it was a good spell.
+### Why pick on Bless?
 
-A little over a year later, the point was brought up that "doing 20 extra damage isn't the same thing as preventing 20 damage to your party." The full argument being: "DPR optimization is only a little slice of the equation. The higher your party's DPR is, the faster the fight ends. Less rounds means less incoming damage, which means more longevity. The goal is to survive the most fights, not end fights quickly. So you look at a combat choice and compare where you think the party's resources will be after the fight. Everything else is irrelevant. Resources are: health, spell slots, abilities left, weapon charges, etc."
+Bless vs Cure Wounds was chosen, specifically, for a few reasons:
+* Bless has a *very* good reputation in the community (good candidate for being over-valued)
+* Bless is a great conduit for comparing increased DPR vs survivability, and for comparing buffs vs the initiative.
 
-Consider the following: A level 2 party is fighting a lizardfolk. Do you attack the lizardfolk on your first turn, or do you bless?
+The results give us good intuition about buff spells in general, and good intuition about how important the first round of combat is.
 
-Then, consider how that changes versus 2 lizardfolk, 3 lizardfolk, 4, 5, etc. How much damage is the attack preventing? How much damage is the bless preventing? Keep your guesses in mind.
+### What next?
 
-### How does bless actually prevent damage?
+I hope that simulation (not necessarily this tool) will usher in a new platform for balance debate,
+and introduce a new way of optimizing builds (and reasoning about optimization).
+Simulation is a powerful tool for DMs that want to get a feel for how strong to make a set-piece encounter,
+or DMs that want to attempt balance changes.
+Simulation is a powerful tool for Wizards of the Coast, so that they can better fine-tune their unearthed arcana (or future versions).
 
-Bless prevents damage when attacks that only hit because of bless cause an enemy to die before they would have hit with an attack action, or multiple attack actions over multiple turns, had been alive. 
+The project itself is open source, and open to both [pull requests](https://github.com/beaushinkle/sim-5e/pulls) and [test-scenario requests](https://github.com/beaushinkle/sim-5e/issues).
+If there's a situation that you'd like tested (like duelist vs defensive fighting style for a sword + board fighter), [open an issue!](https://github.com/beaushinkle/sim-5e/issues)
 
-### How do we count the damage prevented by bless?
-
-The most accurate way to count the damage prevented by bless goes about like this: you bless, and then the first time it hits you record the state of the game. Then you run x simulations from that point as though it hit and y simulation as though it didn't and you say "this particular blessed hit saved z damage on average."
-
-I don't think that's even worth getting into, but I think there is a way you can say "bless caused x damage" in a way that is agreeable and apparant to everyone.
-
-We use a script that simulates combat between a party of characters and an encounter of monsters. The characters and monsters roll initiative, then they take turns attacking. Characters all target the same monster with their attacks until the monster is dead. The monsters attack characters randomly and won't attack a character that is incapacitated. #The party of characters includes a cleric, who will cast its highest level cure wounds on# The script simulates 3000 encounters and prints the total HP of the party when all the monsters are dead.
-
-In most of our simulations, the party of characters comprises a Cleric, a Fighter, a Paladin and a Sorcerer. We run the script once with the party's default HP, AC and attacks, then we run the script once with the Cleric casting Bless before combat, targeting the Cleric, the Fighter and the Paladin. Additionally, it is not possible for the Cleric to stop concentrating on Bless (We'll explain this later). We expect that the average total HP of the party will be higher when the Cleric casts Bless.
-
-### Simulation and Results
-
-In these two simulations, the party is level 2 and the encounters are 2 (easy), 3 (hard) or 4 (deadly) Lizardfolk. The Cleric has 16 Strength, 14 Constitution, 18 AC (Chainmail, Shield), and attacks with +5 to hit for 1d8+3 damage. The Fighter has 16 Strength, 16 Constitution, 18 AC (Chainmail, Shield), and attacks with +5 to hit for 1d8+5 damage (Dueling). The Paladin has 16 Strength, 16 Constitution, 18 AC (Chainmail, Shield), and attacks with +5 to hit for 1d8+5 damage (Dueling). The Sorcerer has 16 Charisma, 12 Constitution, 15 AC (Dragonic Resilience, Dexterity), and attacks with +5 to hit for 1d10 damage. The Lizardfolk each have 15 AC and two attacks with +4 to hit for 1d6+2. In other words they're bog standard.
-
-These are the results of fighting without Bless and fighting with Bless.
-
-Without bless: 2 {:hp 55.09667} 3 {:hp 35.487335} 4 {:hp 14.121333}
-With bless: 2 {:hp 58.326} 3 {:hp 41.906666} 4 {:hp 20.404667}
-
-The average of the total HP when the Cleric casts bless is 58.32 versus 2 Lizardfolk, 41.90 versus 3 Lizardfolk, and 20.40 versus 4 Lizardfolk. The average of the total HP when the Cleric does not cast bless is 55.10 versus 2 Lizardfolk, 35.49 versus 3 Lizardfolk, and 14.12 versus 4 Lizardfolk.
-
-We feel justified in saying that in these combat examples that bless prevented 3.22 during the average encounter with 2 Lizardfolk , 6.41 during the average encounter with 3 Lizardfolk, and 6.28 damage during the average encounter with 4 Lizardfolk. In this encounter, the Cleric has cast Bless without using an action and maintains concentration regardless of the damage the Cleric takes while the Lizardfolk attack party members randomly. In this case, the best possible case for bless, Bless comes out slightly behind Cure Wounds. 
+### Data!
 
 #### First round bless. Average across 3000 sims: 98.8 hp
 <details>
@@ -2104,23 +2092,3 @@ round# 4
 :cleric has no remaining spell slots to heal with
 remaining hp: 128</code></pre>
 </details>
-
-### Why Cure Wounds is the best Cleric spell
-
-The average result of 1d8 is 4.5. When a Cleric casts Cure Wounds, the Cleric adds their Wisdom modifier to the result of a d8. The expected value of casting Cure Wounds is 4.5 + WIS. If your level 1 Cleric has 16 Wisdom, you probably expect to heal 7 or 8 HP when you cast Cure Wounds. How much damage did Bless prevent?
-
-### Using spell slots during a simulated adventuring day
-
-Using spells like haste and burning hands conditionally.
-
-### Which spells are good?
-
-Burning Hands, Fireball, Prayer of Healing etc.
-
-### Which class features are the best?
-
-Which class features preserve the most resources over a simulated adventuring day? Remarks on defensive vs dueling style. Using rages. Action surge and Second wind.
-
-### The number 1 class?
-
-Which class's presence preserves the most resources over a simulated adventuring day?
