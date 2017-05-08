@@ -21,7 +21,7 @@ Examples of normal adventuring days include (for a party of four level 5 charact
 * 2 hard encounters and 2 deadly encounters
 * 4 medium encounters and 1 deadly encounter
 
-I propose that we optimize our chances at surviving *whatever sort of day we think we will be hit with*.
+I propose that we optimize our chances at surviving *whatever sort of adventuring day we think we will be hit with*.
 
 Why should that be the criteria? Why not optimize damage, or control, or utility, or some other measure?
 At the end of the day, all of those are *generalized* by "living through the day".
