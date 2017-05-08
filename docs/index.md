@@ -1489,7 +1489,7 @@ round# 4
 remaining hp: 150</code></pre>
 </details>
 
-#### Blessing before combat. Average across 3000 sims: 104.6
+#### Blessing before combat. Average across 3000 sims: 104.6 hp
 <details>
 <summary>60 hp</summary>
 <pre><code>simulation# 9
