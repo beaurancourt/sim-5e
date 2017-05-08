@@ -76,7 +76,8 @@ Should you:
 * Cast bless *before* combat, if you can?
 * Attack the first round of combat, saving your slots to heal with?
 
-I simulated 3000 runs of each choice and recorded the average total party hp remaining after each combat.
+I simulated 3000 runs of each choice and recorded the average total party hp remaining
+(after using the left-over slots on cure wounds) after each combat.
 I posted the first 10 simulations of each choice further down the document, in case you want to see what the output looks like!
 
 |Bless|No Bless|Pre-bless|
