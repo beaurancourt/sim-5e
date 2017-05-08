@@ -13,9 +13,16 @@ There are more [guides](http://rpgbot.net/dnd5/characters/classes/) that offer o
 
 Yet, what are we *truly* trying to optimize for?
 
-Here, I propose an optimization function: maximize the probability that your party lives through an adventuring day as defined by page 84 of the DMG.
+Here, I propose an optimization function: maximize the probability
+that your party lives through an adventuring day as defined by page 84 of the DMG.
+The DMG suggests a short rest about 1/3 and 2/3 the way through an adventuring day.
+Examples of normal adventuring days include:
+
+* 7 medium encounters
+* 2 hard encounters and 2 deadly encounters
+* 4 medium encounters and 1 deadly encounter
+
 One such adventuring day is 6 medium difficulty encounters for a party of 4 PCs at level 5.
-The DMG suggests a short rest 1/3 and 2/3 the way through an adventuring day.
 
 Why should that be the criteria? Why not optimize damage, or control, or utility, or some other measure?
 At the end of the day, all of those are *generalized* by "living through the day".
@@ -60,7 +67,7 @@ Finally, simulation allows us to throw away our notions about what *should* work
 ### That's all very abstract, math guy. Do you have an actual example?
 
 Say that you're a 5th level party of: a duelist fighter, a vengence paladin, a light cleric, and a wild magic sorcerer.
-You are the cleric, and you come across [three orogs](http://i.imgur.com/rHvLroX.png).
+You are the cleric, and you come across [three orogs](http://i.imgur.com/rHvLroX.png) (a medium-difficulty enounter).
 Your party is spent, or unwilling to use any more spell slots / abilities. You guys are, however, currently at full HP.
 You have a level-1 spell slot, and a level-2 spell slot remaining. You have both bless and cure wounds prepared.
 Say (additionally) that the enemies attack randomly, and that gaining a tactical battlefield advantage isn't possible.
