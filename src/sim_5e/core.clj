@@ -35,8 +35,8 @@
   [world]
   (reduce (fn [world actor]
             (-> world
-                (update-in [actor :reaction] (constantly true))
-                (update-in [actor :shield-bonus] (constantly 0))))
+                (assoc-in [actor :reaction] true)
+                (assoc-in [actor :shield-bonus] 0)))
           world
           (keys world)))
 

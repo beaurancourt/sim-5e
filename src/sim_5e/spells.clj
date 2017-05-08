@@ -19,7 +19,7 @@
   [world actor spell-level targets]
   (log actor " blesses " (clojure.string/join " " targets))
   (reduce (fn [world target]
-            (update-in world [target :bless] (constantly true)))
+            (assoc-in world [target :bless] true))
           (update-in world [actor spell-level] - 1)
           targets))
 
@@ -33,7 +33,7 @@
     (log actor " casts " spell-level " cure wound and heals " target " from " (-> world target :hp) " to " new-hp)
     (-> world
         (update-in [actor spell-level] - 1)
-        (update-in [target :hp] (constantly new-hp)))))
+        (assoc-in [target :hp] new-hp))))
 
 (defn burning-hands
   [world actor spell-level targets]
@@ -56,10 +56,10 @@
             (-> world
                 (update-in [target :ac] + 2)
                 (update-in [target :attacks] + 1)
-                (update-in [target :hasted] (constantly true))))
+                (assoc-in [target :hasted] true)))
           (-> world
               (update-in [actor spell-level] - 1)
-              (update-in [actor :concentrating] (constantly true)))
+              (assoc-in [actor :concentrating] true))
           targets))
 
 (defn fireball
@@ -85,13 +85,13 @@
                   (log :sorcerer " hits " target " with slow")
                   (-> world
                       (update-in [target :ac] - 2)
-                      (update-in [target :attacks] (constantly 1))))
+                      (update-in [target :attacks] take 1)))
                 (do
                   (log :sorcerer " misses " target " with slow")
                   world))))
           (-> world
               (update-in [actor spell-level] - 1)
-              (update-in [actor :concentrating] (constantly true)))
+              (assoc-in [actor :concentrating] true))
           targets))
 
 (defn conjure-animals
@@ -115,7 +115,7 @@
                        :hp ((roll 2 8 2))}}))
             (-> world
                 (update-in [actor spell-level] - 1)
-                (update-in [actor :concentrating] (constantly true)))
+                (assoc-in [actor :concentrating] true))
             (range 8))))
 
 (defn shield-of-faith
@@ -123,7 +123,7 @@
   (log actor " casts shield of faith on " target)
   (-> world
       (update-in [actor spell-level] - 1)
-      (update-in [actor :concentrating] (constantly true))
+      (assoc-in [actor :concentrating] true)
       (update-in [target :ac] + 2)))
 
 (defn magic-missile

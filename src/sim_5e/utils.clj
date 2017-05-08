@@ -110,8 +110,8 @@
                           (do
                             (log interposing " uses protection style against " attacker " to protect " target)
                             (-> world
-                                (update-in [attacker :attack-disadvantage] (constantly true))
-                                (update-in [interposing :reaction] (constantly false))))
+                                (assoc-in [attacker :attack-disadvantage] true)
+                                (assoc-in [interposing :reaction] false)))
                           world)
 
                   natural-roll (case (advantage world attacker target)
@@ -122,7 +122,7 @@
                   base-roll (+ natural-roll (:hit attack-map))
 
                   world (if interposing
-                          (update-in world [attacker :attack-disadvantage] (constantly false))
+                          (assoc-in world [attacker :attack-disadvantage] false)
                           world)
 
                   attack-roll (-> base-roll (+ bless) (- bane))
@@ -137,7 +137,7 @@
                                (do
                                  (log "the sorcerer uses shield to block " attacker)
                                  [(-> world
-                                      (update-in [:sorcerer :shield-bonus] (constantly 5))
+                                      (assoc-in [:sorcerer :shield-bonus] 5)
                                       (update-in [:sorcerer :spell-1] - 1))
                                   (+ ac 5)])
                                [world ac])]
