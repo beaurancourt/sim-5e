@@ -78,7 +78,7 @@ I posted the first 10 simulations of each choice further down the document, in c
 |[98.8 hp](#first-round-bless-average-across-3000-sims-988-hp)|[99.2 hp](#no-bless-at-all-average-across-3000-sims-992-hp)|[104.6 hp](#blessing-before-combat-average-across-3000-sims-1046)|
 
 If we can bless *before* combat starts, it's definitely worth it in this scenario. If we *can't*, and have to use our first action to bless, it's a toss-up.
-It's worth further investigation to see how much of an affect intiative order matters.
+It's worth further investigation to see how much of an effect intiative order matters.
 For now, however, we see that blessing during combat isn't *enormously* better (and is worse, on average) than just attacking, and casting cure wounds afterwards.
 
 ### Why pick on Bless?
