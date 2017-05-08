@@ -75,7 +75,7 @@ I posted the first 10 simulations of each choice further down the document, in c
 
 |Bless|No Bless|Pre-bless|
 |-----|--------|---------|
-|[98.8 hp](#first-round-bless-average-across-3000-sims-988-hp)|99.2 hp|104.6 hp|
+|[98.8 hp](#first-round-bless-average-across-3000-sims-988-hp)|[99.2 hp](#no-bless-at-all-average-across-3000-sims-992-hp)|[104.6 hp](#blessing-before-combat-average-across-3000-sims-1046)|
 
 ### The conclusion is incorrect because the axioms do not accurately model the game.
 
