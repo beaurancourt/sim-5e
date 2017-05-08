@@ -13,16 +13,15 @@ There are more [guides](http://rpgbot.net/dnd5/characters/classes/) that offer o
 
 Yet, what are we *truly* trying to optimize for?
 
-Here, I propose an optimization function: maximize the probability
-that your party lives through an adventuring day as defined by page 84 of the DMG.
-The DMG suggests a short rest about 1/3 and 2/3 the way through an adventuring day.
-Examples of normal adventuring days include:
+The DMG defines an *adventuring day* as a sequence of encounters and short rests, ended by a long rest.
+The short rests come about 1/3 and 2/3 through the day.
+Examples of normal adventuring days include (for a party of four level 5 characters):
 
 * 7 medium encounters
 * 2 hard encounters and 2 deadly encounters
 * 4 medium encounters and 1 deadly encounter
 
-One such adventuring day is 6 medium difficulty encounters for a party of 4 PCs at level 5.
+I propose that we optimize our chances at surviving *whatever sort of day we think we will be hit with*.
 
 Why should that be the criteria? Why not optimize damage, or control, or utility, or some other measure?
 At the end of the day, all of those are *generalized* by "living through the day".
