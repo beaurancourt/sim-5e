@@ -84,7 +84,7 @@ For now, however, we see that blessing during combat isn't *enormously* better (
 ### Why pick on Bless?
 
 Bless vs Cure Wounds was chosen, specifically, for a few reasons:
-* Bless has a *very* good reputation in the community (good candidate for being over-valued)
+* Bless has a *very* high reputation in the community (good candidate for being over-valued)
 * Bless is a great conduit for comparing increased DPR vs survivability, and for comparing buffs vs the initiative.
 
 The results give us good intuition about buff spells in general, and good intuition about how important the first round of combat is.
