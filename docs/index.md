@@ -70,9 +70,12 @@ Should you:
 * Cast bless *before* combat, if you can?
 * Attack the first round of combat, saving your slots to heal with?
 
+I simulated 3000 runs of each choice and recorded the average total party hp remaining after each combat.
+I posted the first 10 simulations of each choice further down the document, in case you want to see what the output looks like!
+
 |Bless|No Bless|Pre-bless|
 |-----|--------|---------|
-|98.8 hp|99.2 hp|104.6 hp|
+|[98.8 hp](#first-round-bless-average-across-3000-sims-988-hp)|99.2 hp|104.6 hp|
 
 ### The conclusion is incorrect because the axioms do not accurately model the game.
 
