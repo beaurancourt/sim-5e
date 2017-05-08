@@ -59,8 +59,8 @@ Finally, simulation allows us to throw away our notions about what *should* work
 
 ### That's all very abstract, math guy. Do you have an actual example?
 
-Say that you're a level 5 party of: 1 duelist fighter, 1 vengence paladin, 1 light cleric, and 1 wild magic sorcerer.
-You are the cleric, and you come across 3 [orogs](http://i.imgur.com/rHvLroX.png).
+Say that you're a 5th level party of: a duelist fighter, a vengence paladin, a light cleric, and a wild magic sorcerer.
+You are the cleric, and you come across [three orogs](http://i.imgur.com/rHvLroX.png).
 Your party is spent, or unwilling to use any more spell slots / abilities. You guys are, however, currently at full HP.
 You have a level-1 spell slot, and a level-2 spell slot remaining. You have both bless and cure wounds prepared.
 Say (additionally) that the enemies attack randomly, and that gaining a tactical battlefield advantage isn't possible.
@@ -84,7 +84,7 @@ For now, however, we see that blessing during combat isn't *enormously* better (
 ### Why pick on Bless?
 
 Bless vs Cure Wounds was chosen, specifically, for a few reasons:
-* Bless has a *very* high reputation in the community (good candidate for being over-valued)
+* Bless has a *very* good reputation in the community (good candidate for being over-valued)
 * Bless is a great conduit for comparing increased DPR vs survivability, and for comparing buffs vs the initiative.
 
 The results give us good intuition about buff spells in general, and good intuition about how important the first round of combat is.
